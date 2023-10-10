@@ -23,7 +23,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/register", (req, res) => {
+app.post("/registerP", (req, res) => {
   const nome = req.body.nome;
   const email = req.body.email;
   const senha = md5(req.body.senha);
@@ -88,7 +88,7 @@ app.post("/register", (req, res) => {
 
 // realizar login
 
-app.post("/login", (req, response) =>{
+app.post("/loginP", (req, response) =>{
   const email = req.body.email;
   const senha = md5(req.body.senha);
 
@@ -99,7 +99,7 @@ app.post("/login", (req, response) =>{
         }else{
           if(res.length > 0){
             console.log("conectado")
-            response.redirect("/home")
+            response.redirect("/")
           } else {
             console.log("usuario ou senha invalidos")
           }
