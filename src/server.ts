@@ -99,7 +99,7 @@ app.post("/loginP", (req, response) =>{
         }else{
           if(res.length > 0){
             console.log("conectado")
-            response.redirect("/")
+            response.redirect("/sesstrue")
           } else {
             console.log("usuario ou senha invalidos")
           }
