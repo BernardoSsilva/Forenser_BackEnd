@@ -112,7 +112,9 @@ app.post("/loginP", (req, res) => {
         if (result.length > 0) {
           console.log("conectado");
           const token  = jwt.sign({ email }, secret, { expiresIn: 3600 });
-          res.status(200).json({auth:true, token });
+          console.log(token)
+          res.redirect("http://localhost:5173/sesstrue")
+
         } else {
           console.log("usuario ou senha invalidos");
           res.status(401).json({ message: "Usuário ou senha inválidos" });
