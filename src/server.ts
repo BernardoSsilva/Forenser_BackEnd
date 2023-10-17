@@ -2,6 +2,21 @@ import express from "express";
 import cors from "cors";
 import { createConnection } from "mysql";
 import md5 from "md5";
+import jwt from "jsonwebtoken"; // Importe a biblioteca JWT
+
+const secret = 'forenserSecurity';
+
+function verifyJwt(req:any, res:any, next:any){
+  const token = req.headers['x-access-token'];
+  jwt.verify(token, secret, (err:any, decoded:any) =>{
+    if(err){
+      return res.status(401).end();
+    } else{
+      req.userEmail = decoded.email;
+      next();
+    }
+  })
+}
 
 const connection = createConnection({
   host: "localhost",
@@ -14,7 +29,7 @@ connection.connect((err) => {
   if (err) {
     console.error(err);
   } else {
-    console.log("data_base connectd");
+    console.log("database connected");
   }
 });
 
@@ -22,6 +37,11 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// Função para criar um token JWT
+function createJWTToken(email:any) {
+  return jwt.sign({ email }, secret, { expiresIn: "1h" });
+}
 
 app.post("/registerP", (req, res) => {
   const nome = req.body.nome;
@@ -33,19 +53,19 @@ app.post("/registerP", (req, res) => {
   const data_n = req.body.data_n;
 
   try {
-    connection.query("select * from usuario where email_usu = ?",[email], (err, res)=>{
-      if(err){
-        console.error("Ocorreu um erro inesperado")
-        }else{
-          if(res.length > 0){
-            console.log(res)
-          } else {
+    connection.query("SELECT * FROM usuario WHERE email_usu = ?", [email], (err, result) => {
+      if (err) {
+        console.error("Ocorreu um erro inesperado");
+      } else {
+        if (result.length > 0) {
+          console.log(result);
+        } else {
           const dateFormatter = new Intl.DateTimeFormat("fr-CA", {
             year: "numeric",
             month: "2-digit",
             day: "2-digit",
           });
-      
+
           connection.query(
             "INSERT INTO usuario SET ?",
             {
@@ -59,24 +79,18 @@ app.post("/registerP", (req, res) => {
             },
             function (error, results, fields) {
               console.log(error, results, fields);
-      
+
               if (error) throw error;
               console.log(results.insertId);
             }
           );
-          }
+
+          // Crie um token JWT e envie-o como resposta
+          const token = createJWTToken(email);
+          res.status(200).json({ token });
         }
-        
-      //} else {
-      //  console.log("Usuario ja existente");
-      //}
-    })
-    
-    console.log("after query");
-    return res.status(200).json({
-      error: "teste",
+      }
     });
-   
   } catch (error) {
     console.error("error", error);
     res.status(400).json({
@@ -85,31 +99,36 @@ app.post("/registerP", (req, res) => {
   }
 });
 
-
-// realizar login
-
-app.post("/loginP", (req, response) =>{
+// Realizar login e criar um token JWT
+app.post("/loginP", (req, res) => {
   const email = req.body.email;
   const senha = md5(req.body.senha);
 
-  try{
-    connection.query("select * from usuario where email_usu = ? and senha = ?",[email, senha], (err, res)=>{
-      if(err){
-        console.error("Ocorreu um erro inesperado")
-        }else{
-          if(res.length > 0){
-            console.log("conectado")
-            response.redirect("/sesstrue")
-          } else {
-            console.log("usuario ou senha invalidos")
-          }
+  try {
+    connection.query("SELECT * FROM usuario WHERE email_usu = ? AND senha = ?", [email, senha], (err, result) => {
+      if (err) {
+        console.error("Ocorreu um erro inesperado");
+      } else {
+        if (result.length > 0) {
+          console.log("conectado");
+          const token  = jwt.sign({ email }, secret, { expiresIn: 3600 });
+          res.status(200).json({auth:true, token });
+        } else {
+          console.log("usuario ou senha invalidos");
+          res.status(401).json({ message: "Usuário ou senha inválidos" });
         }
-      });
-  }catch(error){
-    console.log(error)
+      }
+    });
+  } catch (error) {
+    console.log(error);
   }
 });
 
+app.get('/inicio', verifyJwt, (req, res) =>{
+  console.log(req.body.userEmail + ' fez esta chamada');
+  res.status(200).json({ funciona:true });
+})
+
 app.listen(3001, () => {
-  console.log("listen on port 3001");
+  console.log("Listen on port 3001");
 });
