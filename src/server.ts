@@ -3,6 +3,7 @@ import cors from "cors";
 import { createConnection } from "mysql";
 import md5 from "md5";
 import jwt from "jsonwebtoken"; // Importe a biblioteca JWT
+import { LocalStorage } from "node-localstorage";
 
 const secret = 'forenserSecurity';
 
@@ -110,11 +111,19 @@ app.post("/loginP", (req, res) => {
         console.error("Ocorreu um erro inesperado");
       } else {
         if (result.length > 0) {
-          console.log("conectado");
-          const token  = jwt.sign({ email }, secret, { expiresIn: 3600 });
-          console.log(token)
-          res.redirect("http://localhost:5173/sesstrue")
 
+            // Obtenha o nome do usuário a partir do resultado do banco de dados
+            const nomeUsuario = result[0].nome_usu;
+
+            // Crie o payload do token com o nome do usuário
+            const payload = {
+              email: email,
+              nome: nomeUsuario,
+            };
+
+          console.log("conectado");
+          const token  = jwt.sign(payload, secret, { expiresIn: 3600 });
+          res.status(200).json({ token });
         } else {
           console.log("usuario ou senha invalidos");
           res.status(401).json({ message: "Usuário ou senha inválidos" });
