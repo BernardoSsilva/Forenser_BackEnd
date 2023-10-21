@@ -181,6 +181,48 @@ app.post("/registrarAcidente", (req,res) =>{
 })
 
 
+
+app.post("/registrarRoubo", (req,res) =>{
+  const violencia = req.body.violencia;
+  const subtracao = req.body.subtracao;
+  const data_fato = dateFormatter.format(new Date(req.body.data_fato));
+  const horario = req.body.horario;
+  const tipo_local = req.body.tipo_local;
+  const endereco = req.body.endereco;
+  const comunicante = req.body.comunicante;
+  const vitima = req.body.vitima;
+  const objetos = req.body.objetos;
+  const relato_fato = req.body.relato_fato;
+  try{
+    connection.query(
+      "INSERT INTO boletim_roubo SET ?",
+      {
+        violencia,
+        subtracao,
+        data_fato,
+        horario,
+        tipo_local,
+        endereco,
+        comunicante,
+        vitima,
+        objetos,
+        relato_fato
+      },
+      
+      function (error, results, fields) {
+        console.log(error, results, fields);
+
+        if (error) throw error;
+        console.log(results.insertId);
+      }
+      )
+  }catch(error){
+    console.log(error)
+  }
+})
+
+
+
 app.get('/inicio', verifyJwt, (req, res) =>{
   console.log(req.body.userEmail + ' fez esta chamada');
   res.status(200).json({ funciona:true });
