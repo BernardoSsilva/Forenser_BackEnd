@@ -4,8 +4,17 @@ import { createConnection } from "mysql";
 import md5 from "md5";
 import jwt from "jsonwebtoken"; // Importe a biblioteca JWT
 import { LocalStorage } from "node-localstorage";
+import jwt_decode from 'jwt-decode';
 
 const secret = 'forenserSecurity';
+
+
+const dateFormatter = new Intl.DateTimeFormat("fr-CA", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
 
 function verifyJwt(req:any, res:any, next:any){
   const token = req.headers['x-access-token'];
@@ -61,12 +70,6 @@ app.post("/registerP", (req, res) => {
         if (result.length > 0) {
           console.log(result);
         } else {
-          const dateFormatter = new Intl.DateTimeFormat("fr-CA", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          });
-
           connection.query(
             "INSERT INTO usuario SET ?",
             {
@@ -114,9 +117,11 @@ app.post("/loginP", (req, res) => {
 
             // Obtenha o nome do usuário a partir do resultado do banco de dados
             const nomeUsuario = result[0].nome_usu;
+            const idUsu = result[0].id_usu;
 
             // Crie o payload do token com o nome do usuário
             const payload = {
+              id: idUsu,
               email: email,
               nome: nomeUsuario,
             };
@@ -134,6 +139,47 @@ app.post("/loginP", (req, res) => {
     console.log(error);
   }
 });
+
+
+// boletins de ocorrencia
+
+app.post("/registrarAcidente", (req,res) =>{
+  const data_fato = dateFormatter.format(new Date(req.body.data_fato));
+  const horario = req.body.horario;
+  const tipo_local = req.body.tipo_local;
+  const endereco = req.body.endereco;
+  const comunicante = req.body.comunicante;
+  const motorista = req.body.motorista;
+  const veiculos = req.body.veiculos;
+  const relato_fato = req.body.relato_fato;
+  const cod_usu = null;
+  try{
+    connection.query(
+      "INSERT INTO boletim_acidente SET ?",
+      {
+        data_fato,
+        horario,
+        tipo_local,
+        endereco,
+        comunicante,
+        motorista,
+        veiculos,
+        relato_fato,
+        cod_usu
+      },
+      
+      function (error, results, fields) {
+        console.log(error, results, fields);
+
+        if (error) throw error;
+        console.log(results.insertId);
+      }
+      )
+  }catch(error){
+    console.log(error)
+  }
+})
+
 
 app.get('/inicio', verifyJwt, (req, res) =>{
   console.log(req.body.userEmail + ' fez esta chamada');

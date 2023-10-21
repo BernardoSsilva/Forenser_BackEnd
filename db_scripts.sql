@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07/10/2023 às 17:13
+-- Tempo de geração: 21/10/2023 às 05:15
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -24,31 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `boletim`
+-- Estrutura para tabela `boletim_acidente`
 --
 
-CREATE TABLE `boletim` (
-  `protocolo` int(11) NOT NULL,
-  `tipo` varchar(100) NOT NULL,
-  `data_hora_ocorr` datetime DEFAULT NULL,
-  `vitima` varchar(200) NOT NULL,
-  `testemunhas` varchar(200) DEFAULT NULL,
-  `localizacao` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `casos`
---
-
-CREATE TABLE `casos` (
-  `id_caso` int(11) NOT NULL,
-  `boletim_at` int(11) NOT NULL,
-  `investigador_at` int(11) NOT NULL,
-  `face_at` int(11) NOT NULL,
-  `usuario_reg` int(11) NOT NULL,
-  `status_caso` enum('Fase Investigativa','Audiência de Custódia','Recebimento da Denúncia','Audiência de Instrução e Julgamento','Sentença','Concluido') DEFAULT NULL
+CREATE TABLE `boletim_acidente` (
+  `id_fato` int(11) NOT NULL,
+  `data_fato` date NOT NULL,
+  `horario` varchar(5) NOT NULL,
+  `tipo_local` varchar(20) NOT NULL,
+  `endereco` varchar(300) NOT NULL,
+  `comunicante` varchar(100) NOT NULL,
+  `motorista` varchar(100) NOT NULL,
+  `veiculos` varchar(400) NOT NULL,
+  `relato_fato` varchar(500) NOT NULL,
+  `cod_usu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -101,27 +90,31 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usu`, `nome_usu`, `cpf_usu`, `data_nasc`, `email_usu`, `telefone`, `sexo`, `senha`) VALUES
-(1, 'Bernardo Santos da Slva', '123.008.389.82', '2005-08-08', 'bernardosilva698@gmail.com', '(48)99852-9084', 'M', 'bernardo1227');
+(1, 'Bernardo Santos da Slva', '123.008.389.82', '2005-08-08', 'bernardosilva698@gmail.com', '(48)99852-9084', 'M', 'bernardo1227'),
+(2, 'Rosane Conceição Santos da Silva', '76936066020', '1964-07-12', 'rosane.santosicm@gmail.com', '(48)99975-5069', 'F', '12345678'),
+(3, 'Bernardo Santos', '123.008.389-82', '2005-08-07', 'rosane.santosm@gmail.com', '48998529084', 'M', '4941e2f51e5364077b65f2357d005ec0'),
+(4, 'Bernardo Santos', '123.008.389-82', '2005-08-07', 'rosane.santosm@gmail.com', '48998529084', 'M', '4941e2f51e5364077b65f2357d005ec0'),
+(5, 'Bernardo Santos', '1230083892', '2005-08-07', 'rosane.santosm@gmail.com', '48998529084', 'M', '4941e2f51e5364077b65f2357d005ec0'),
+(6, 'Bernardo Santos', '1230083892', '2005-08-07', 'rosane.santosm@gmail.com', '48998529084', 'M', '4941e2f51e5364077b65f2357d005ec0'),
+(7, 'Bernardo Santos', '1230083892', '2005-08-07', 'rosane.santosm@gmail.com', '48998529084', 'M', '4941e2f51e5364077b65f2357d005ec0'),
+(8, 'Bernardo Santos', '1230083892', '2005-08-07', 'rosane.santosm@gmail.com', '48998529084', 'M', '4941e2f51e5364077b65f2357d005ec0'),
+(9, 'Bernardo Santos', '1230083892', '2005-08-07', 'rosane.santosm@gmail.com', '48998529084', 'M', '4941e2f51e5364077b65f2357d005ec0'),
+(10, 'Rosane Conceição Santos da Silva', '76936066020', '2005-08-07', 'rosane.santosicm@gmail.com', '(48)9852-9084', 'F', '25d55ad283aa400af464c76d713c07ad'),
+(11, 'Rosane Conceição Santos da Silva', '76936066020', '2005-08-07', 'rosane.santosicm@gmail.com', '(48)9852-9084', 'F', '25d55ad283aa400af464c76d713c07ad'),
+(12, 'Rosane Conceição Santos da Silva', '76936066020', '2005-08-07', 'rosane@gmail.com', '(48)9852-9084', 'F', '25d55ad283aa400af464c76d713c07ad'),
+(13, 'bernardo', '12300838982', '2005-08-07', 'bernardo0808@gmail.com', '48998529084', 'M', '69f8fe09eac8c229e566b27e38a67893'),
+(14, 'LGBT', '123.456.789-10', '1200-08-07', 'lgbt@gmail.com', '(48) 99975-5069', 'F', '25d55ad283aa400af464c76d713c07ad');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `boletim`
+-- Índices de tabela `boletim_acidente`
 --
-ALTER TABLE `boletim`
-  ADD PRIMARY KEY (`protocolo`);
-
---
--- Índices de tabela `casos`
---
-ALTER TABLE `casos`
-  ADD PRIMARY KEY (`id_caso`),
-  ADD KEY `boletim_at` (`boletim_at`),
-  ADD KEY `investigador_at` (`investigador_at`),
-  ADD KEY `face_at` (`face_at`),
-  ADD KEY `usuario_reg` (`usuario_reg`);
+ALTER TABLE `boletim_acidente`
+  ADD PRIMARY KEY (`id_fato`),
+  ADD KEY `cod_usu` (`cod_usu`);
 
 --
 -- Índices de tabela `face`
@@ -146,10 +139,10 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `casos`
+-- AUTO_INCREMENT de tabela `boletim_acidente`
 --
-ALTER TABLE `casos`
-  MODIFY `id_caso` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `boletim_acidente`
+  MODIFY `id_fato` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `face`
@@ -167,20 +160,17 @@ ALTER TABLE `investigadores`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restrições para tabelas despejadas
 --
 
 --
--- Restrições para tabelas `casos`
+-- Restrições para tabelas `boletim_acidente`
 --
-ALTER TABLE `casos`
-  ADD CONSTRAINT `casos_ibfk_1` FOREIGN KEY (`boletim_at`) REFERENCES `boletim` (`protocolo`),
-  ADD CONSTRAINT `casos_ibfk_2` FOREIGN KEY (`investigador_at`) REFERENCES `investigadores` (`id_inv`),
-  ADD CONSTRAINT `casos_ibfk_3` FOREIGN KEY (`face_at`) REFERENCES `face` (`id_face`),
-  ADD CONSTRAINT `casos_ibfk_4` FOREIGN KEY (`usuario_reg`) REFERENCES `usuario` (`id_usu`);
+ALTER TABLE `boletim_acidente`
+  ADD CONSTRAINT `boletim_acidente_ibfk_1` FOREIGN KEY (`cod_usu`) REFERENCES `usuario` (`id_usu`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
