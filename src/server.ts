@@ -2,9 +2,8 @@ import express from "express";
 import cors from "cors";
 import { createConnection } from "mysql";
 import md5 from "md5";
-import jwt from "jsonwebtoken"; // Importe a biblioteca JWT
-import { LocalStorage } from "node-localstorage";
-import jwt_decode from 'jwt-decode';
+import jwt from "jsonwebtoken";
+import jwtDecode from "jwt-decode";
 
 const secret = 'forenserSecurity';
 
@@ -276,7 +275,7 @@ app.listen(3001, () => {
   console.log("Listen on port 3001");
 });
 
-app.delete('/exclude_porfile/:email', verifyJwt,(req, res) => {
+app.delete('/exclude_porfile/:email',(req, res) => {
   const email = req.params.email;
   connection.query("DELETE FROM usuario WHERE email_usu = ?", [email], (err, result) => {
     if (err) {
@@ -288,3 +287,23 @@ app.delete('/exclude_porfile/:email', verifyJwt,(req, res) => {
     }
   });
 });
+
+// to do
+
+
+app.put("/editValues", (req, res) =>{
+  
+const token = localStorage.getItem("jwtToken")
+
+  const email = req.body.emailField;
+  const telefone = req.body.telefoneField;
+
+  console.log(email, telefone)
+  connection.query("UPDATE usuario SET email_usu = ?, telefone = ? WHERE id_usu = ?",[email,telefone],(err, result) => {
+    if(err){
+      console.log(err)
+    }else{
+      console.log(result)
+    }
+  })
+})
