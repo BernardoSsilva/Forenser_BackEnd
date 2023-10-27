@@ -118,12 +118,18 @@ app.post("/loginP", (req, res) => {
             // Obtenha o nome do usuário a partir do resultado do banco de dados
             const nomeUsuario = result[0].nome_usu;
             const idUsu = result[0].id_usu;
+            const telefoneUsuario = result[0].telefone;
+            const sexoUsuario = result[0].sexo;
+            const cpfUsuario = result[0].cpf;
 
             // Crie o payload do token com o nome do usuário
             const payload = {
               id: idUsu,
               email: email,
               nome: nomeUsuario,
+              telefone: telefoneUsuario,
+              sexo: sexoUsuario,
+              cpf: cpfUsuario
             };
 
           console.log("conectado");
@@ -261,11 +267,24 @@ app.post("/registrarViolenciaD", (req,res) =>{
 
 
 
-app.get('/inicio', verifyJwt, (req, res) =>{
+app.get('/LogedHomePage', verifyJwt, (req, res) =>{
   console.log(req.body.userEmail + ' fez esta chamada');
   res.status(200).json({ funciona:true });
 })
 
 app.listen(3001, () => {
   console.log("Listen on port 3001");
+});
+
+app.delete('/exclude_porfile/:email', verifyJwt,(req, res) => {
+  const email = req.params.email;
+  connection.query("DELETE FROM usuario WHERE email_usu = ?", [email], (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json({ error: 'Erro ao excluir o perfil.' });
+    } else {
+      console.log(result);
+      res.status(200).json({ message: 'Perfil excluído com sucesso.' });
+    }
+  });
 });
