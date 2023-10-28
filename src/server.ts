@@ -148,7 +148,8 @@ app.post("/loginP", (req, res) => {
 
 // boletins de ocorrencia
 
-app.post("/registrarAcidente", (req,res) =>{
+app.post("/registrarAcidente/:id", (req,res) =>{
+  const cod_usuario = req.params.id
   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
   const horario = req.body.horario;
   const tipo_local = req.body.tipo_local;
@@ -157,7 +158,6 @@ app.post("/registrarAcidente", (req,res) =>{
   const motorista = req.body.motorista;
   const veiculos = req.body.veiculos;
   const relato_fato = req.body.relato_fato;
-  const cod_usu = null;
   try{
     connection.query(
       "INSERT INTO boletim_acidente SET ?",
@@ -170,14 +170,13 @@ app.post("/registrarAcidente", (req,res) =>{
         motorista,
         veiculos,
         relato_fato,
-        cod_usu
+        cod_usuario
       },
       
       function (error, results, fields) {
         console.log(error, results, fields);
 
         if (error) throw error;
-        console.log(results.insertId);
       }
       )
   }catch(error){
@@ -187,7 +186,8 @@ app.post("/registrarAcidente", (req,res) =>{
 
 
 
-app.post("/registrarRoubo", (req,res) =>{
+app.post("/registrarRoubo/:id", (req,res) =>{
+  const cod_usuario = req.params.id
   const violencia = req.body.violencia;
   const subtracao = req.body.subtracao;
   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
@@ -211,14 +211,14 @@ app.post("/registrarRoubo", (req,res) =>{
         comunicante,
         vitima,
         objetos,
-        relato_fato
+        relato_fato,
+        cod_usuario
       },
       
       function (error, results, fields) {
         console.log(error, results, fields);
 
         if (error) throw error;
-        console.log(results.insertId);
       }
       )
   }catch(error){
@@ -226,7 +226,8 @@ app.post("/registrarRoubo", (req,res) =>{
   }
 })
 
-app.post("/registrarViolenciaD", (req,res) =>{
+app.post("/registrarViolenciaD/:id", (req,res) =>{
+  const cod_usuario = req.params.id
   const violencia = req.body.violencia;
   const obito = req.body.obito;
   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
@@ -249,7 +250,8 @@ app.post("/registrarViolenciaD", (req,res) =>{
         endereco,
         comunicante,
         vitima,
-        relato_fato
+        relato_fato,
+        cod_usuario
       },
       
       function (error, results, fields) {
