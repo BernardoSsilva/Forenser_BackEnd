@@ -291,15 +291,14 @@ app.delete('/exclude_porfile/:email',(req, res) => {
 // to do
 
 
-app.put("/editValues", (req, res) =>{
+app.put("/editValues/:id", (req, res) =>{
   
-const token = localStorage.getItem("jwtToken")
-
+  const id = req.params.id
   const email = req.body.emailField;
   const telefone = req.body.telefoneField;
 
   console.log(email, telefone)
-  connection.query("UPDATE usuario SET email_usu = ?, telefone = ? WHERE id_usu = ?",[email,telefone],(err, result) => {
+  connection.query("UPDATE usuario SET email_usu = ?, telefone = ? WHERE id_usu = ?",[email,telefone, id],(err, result) => {
     if(err){
       console.log(err)
     }else{
