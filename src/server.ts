@@ -3,7 +3,9 @@ import cors from "cors";
 import { createConnection } from "mysql";
 import md5 from "md5";
 import jwt from "jsonwebtoken";
+import { OpenAI } from "openai";
 import jwtDecode from "jwt-decode";
+import { OpenAI } from "openai";
 
 const secret = 'forenserSecurity';
 
@@ -308,3 +310,28 @@ app.put("/editValues/:id", (req, res) =>{
     }
   })
 })
+
+
+const openai = new OpenAI({
+  apiKey: "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",
+  dangerouslyAllowBrowser: true
+});
+
+app.post("/generate",async (req, res) => {
+  try {
+    const prompt  = "A cute baby sea otter";
+
+    const aiResponse = await openai.createImage({
+      prompt,
+      n: 1,
+      size: '1024x1024',
+      response_format: 'b64_json',
+    });
+
+    const image = aiResponse.data.data[0].b64_json;
+    res.status(200).json({ photo: image });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error?.response.data.error.message || 'Something went wrong');
+  }
+});
