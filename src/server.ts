@@ -3,9 +3,10 @@ import cors from "cors";
 import { createConnection } from "mysql";
 import md5 from "md5";
 import jwt from "jsonwebtoken";
-import { OpenAI } from "openai";
 import jwtDecode from "jwt-decode";
 import { OpenAI } from "openai";
+
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const secret = 'forenserSecurity';
 
@@ -312,26 +313,39 @@ app.put("/editValues/:id", (req, res) =>{
 })
 
 
-const openai = new OpenAI({
-  apiKey: "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",
-  dangerouslyAllowBrowser: true
-});
+// const openai = new OpenAI({
+//   apiKey: "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",
+//   dangerouslyAllowBrowser: true
+// });
 
-app.post("/generate",async (req, res) => {
-  try {
-    const prompt  = "A cute baby sea otter";
+// app.post("/generate", async (req, res) => {
+//   try {
+//     const prompt = "A cute baby sea otter";
 
-    const aiResponse = await openai.createImage({
-      prompt,
-      n: 1,
-      size: '1024x1024',
-      response_format: 'b64_json',
-    });
+//     const aiResponse = await openai.completion.create({
+//       engine: 'text-davinci-003', // Verifique se o engine está correto de acordo com a versão da API que você está usando
+//       prompt,
+//       n: 1,
+//       max_tokens: 1024,
+//     });
 
-    const image = aiResponse.data.data[0].b64_json;
-    res.status(200).json({ photo: image });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send(error?.response.data.error.message || 'Something went wrong');
+//     const image = aiResponse.choices[0].text.trim();
+//     console.log(image);
+
+//     res.status(200).json({ photo: image });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).send(error?.response?.data?.error?.message || 'Something went wrong');
+//   }
+// });
+
+app.use(express.static('build')); // Serve os arquivos estáticos do seu aplicativo React (se estiver usando create-react-app, por exemplo)
+
+// Configura o proxy para a API da OpenAI
+app.use('/v1/images', createProxyMiddleware({
+  target: 'https://api.openai.com',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/v1/images': '/v1/images' // Mapeia /v1/images para /v1/images na API da OpenAI
   }
-});
+}));
