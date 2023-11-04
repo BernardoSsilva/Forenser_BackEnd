@@ -339,13 +339,19 @@ app.put("/editValues/:id", (req, res) =>{
 //   }
 // });
 
-app.use(express.static('build')); // Serve os arquivos estáticos do seu aplicativo React (se estiver usando create-react-app, por exemplo)
 
-// Configura o proxy para a API da OpenAI
-app.use('/v1/images', createProxyMiddleware({
-  target: 'https://api.openai.com',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/v1/images': '/v1/images' // Mapeia /v1/images para /v1/images na API da OpenAI
-  }
-}));
+
+
+// app.use(express.static('build')); // Serve os arquivos estáticos do seu aplicativo React (se estiver usando create-react-app, por exemplo)
+
+// // Configura o proxy para a API da OpenAI
+// app.use('/v1/images', createProxyMiddleware({
+//   target: 'https://api.openai.com',
+//   changeOrigin: true,
+//   pathRewrite: {
+//     '^/v1/images': '/v1/images'
+//   },
+//   timeout: 60000
+// }));
+
+
