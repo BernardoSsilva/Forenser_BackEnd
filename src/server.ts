@@ -1,12 +1,9 @@
 import express from "express";
 import cors from "cors";
-import { createConnection } from "mysql";
 import md5 from "md5";
 import jwt from "jsonwebtoken";
-import jwtDecode from "jwt-decode";
-import { OpenAI } from "openai";
+import { db } from "./controllers/db";
 
-import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const secret = 'forenserSecurity';
 
@@ -30,20 +27,20 @@ function verifyJwt(req:any, res:any, next:any){
   })
 }
 
-const connection = createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "forencer_data",
-});
+// const connection = createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "forencer_data",
+// });
 
-connection.connect((err) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log("database connected");
-  }
-});
+// connection.connect((err) => {
+//   if (err) {
+//     console.error(err);
+//   } else {
+//     console.log("database connected");
+//   }
+// });
 
 const app = express();
 
@@ -65,14 +62,14 @@ app.post("/registerP", (req, res) => {
   const data_n = req.body.data_n;
 
   try {
-    connection.query("SELECT * FROM usuario WHERE email_usu = ?", [email], (err, result) => {
+    db.query("SELECT * FROM usuario WHERE email_usu = ?", [email], (err, result) => {
       if (err) {
         console.error("Ocorreu um erro inesperado");
       } else {
         if (result.length > 0) {
           console.log(result);
         } else {
-          connection.query(
+          db.query(
             "INSERT INTO usuario SET ?",
             {
               nome_usu: nome,
@@ -111,7 +108,7 @@ app.post("/loginP", (req, res) => {
   const senha = md5(req.body.senha);
 
   try {
-    connection.query("SELECT * FROM usuario WHERE email_usu = ? AND senha = ?", [email, senha], (err, result) => {
+    db.query("SELECT * FROM usuario WHERE email_usu = ? AND senha = ?", [email, senha], (err, result) => {
       if (err) {
         console.error("Ocorreu um erro inesperado");
       } else {
@@ -162,7 +159,7 @@ app.post("/registrarAcidente/:id", (req,res) =>{
   const veiculos = req.body.veiculos;
   const relato_fato = req.body.relato_fato;
   try{
-    connection.query(
+    db.query(
       "INSERT INTO boletim_acidente SET ?",
       {
         data_fato,
@@ -202,7 +199,7 @@ app.post("/registrarRoubo/:id", (req,res) =>{
   const objetos = req.body.objetos;
   const relato_fato = req.body.relato_fato;
   try{
-    connection.query(
+    db.query(
       "INSERT INTO boletim_roubo SET ?",
       {
         violencia,
@@ -242,7 +239,7 @@ app.post("/registrarViolenciaD/:id", (req,res) =>{
   const objetos = req.body.objetos;
   const relato_fato = req.body.relato_fato;
   try{
-    connection.query(
+    db.query(
       "INSERT INTO boletim_violenciaDomestica SET ?",
       {
         violencia,
@@ -282,7 +279,7 @@ app.listen(3001, () => {
 
 app.delete('/exclude_porfile/:email',(req, res) => {
   const email = req.params.email;
-  connection.query("DELETE FROM usuario WHERE email_usu = ?", [email], (err, result) => {
+  db.query("DELETE FROM usuario WHERE email_usu = ?", [email], (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json({ error: 'Erro ao excluir o perfil.' });
@@ -303,7 +300,7 @@ app.put("/editValues/:id", (req, res) =>{
   const telefone = req.body.telefoneField;
 
   console.log(email, telefone)
-  connection.query("UPDATE usuario SET email_usu = ?, telefone = ? WHERE id_usu = ?",[email,telefone, id],(err, result) => {
+  db.query("UPDATE usuario SET email_usu = ?, telefone = ? WHERE id_usu = ?",[email,telefone, id],(err, result) => {
     if(err){
       console.log(err)
     }else{
@@ -311,6 +308,20 @@ app.put("/editValues/:id", (req, res) =>{
     }
   })
 })
+
+app.get('/:id', (req, res) => {
+  const codUsuario = req.params.id;
+
+  const query = ` SELECT 'acidente' as tipo, data_fato, comunicante, endereco, relato_fato FROM boletim_acidente WHERE cod_usuario = ${codUsuario}  UNION SELECT 'roubo' as tipo, data_fato, comunicante, endereco, relato_fato FROM boletim_roubo WHERE cod_usuario = ${codUsuario} UNION SELECT 'violencia domestica' as tipo, data_fato, comunicante, endereco, relato_fato FROM boletim_violenciadomestica WHERE cod_usuario = ${codUsuario}`;
+
+  db.query(query, (error, results) => {
+    if (error) {
+      console.error('Erro ao executar a consulta: ' + error.stack);
+      return res.status(500).json({ error: 'Erro interno do servidor' });
+    }
+    res.json(results);
+  });
+});
 
 
 // const openai = new OpenAI({
