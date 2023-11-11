@@ -398,3 +398,28 @@ app.get('/:id', (req, res) => {
     res.json(results);
   });
 });
+
+
+app.post('/cadastrarDenuncia', (req,res) =>{
+  const nome = req.body.nome;
+  const local = req.body.local;
+  const descricao_den = req.body.descricao;
+  try{
+    db.query('insert into denuncias set ?',
+    {
+      nome,
+      local,
+      descricao_den
+    }, (err, result) =>{
+      if(err){
+        console.log(err)
+      } else{
+        console.log(result);
+      res.status(200).json({ message: 'Denuncia realizada com êxito' });
+      }
+    })
+    console.log(res)
+  }catch(error){
+    console.log(error)
+  }
+})
