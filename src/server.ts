@@ -423,3 +423,89 @@ app.post('/cadastrarDenuncia', (req,res) =>{
     console.log(error)
   }
 })
+
+app.post('/agendar/:id', (req, res) => {
+  const cod_usuario = req.params.id;
+  const nome = req.body.nome;
+  const data = dateFormatter.format(new Date(req.body.data));
+  const hora = req.body.hora;
+
+  try {
+    console.log('Rota de agendamento alcançada');
+
+    db.query('INSERT INTO agendamento SET ?', {
+      cod_usuario,
+      nome,
+      data,
+      hora
+    }, (err, result) => {
+      if (err) {
+        console.error('Erro ao inserir agendamento:', err);
+        res.status(500).json({ error: 'Erro interno do servidor' });
+      } else {
+        console.log('Agendamento realizado com sucesso:', result);
+        res.status(200).json({ message: 'Agendamento realizado com êxito' });
+      }
+    });
+  } catch (error) {
+    console.error('Erro durante o processamento do agendamento:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+app.get('/agendamentos/:id', (req, res) => {
+  const codUsuario = req.params.id;
+
+  const query = `
+    SELECT * from agendamento WHERE cod_usuario = ${codUsuario}
+  `;
+  db.query(query, (error, results) => {
+    if (error) {
+      console.error('Erro ao executar a consulta: ' + error.stack);
+      return res.status(500).json({ error: 'Erro interno do servidor' });
+    }
+    res.json(results);
+  });
+})
+
+app.put('/editAgend/:id', (req,res) =>{
+  const id_agendamento = req.params.id;
+  const nome = req.body.nome;
+  const data = dateFormatter.format(new Date(req.body.data));
+  const hora = req.body.hora;
+  try {
+    console.log(nome, data, hora, id_agendamento);
+
+    db.query('Update agendamento SET nome = ?, data = ?, hora = ? where id_agendamento = ?', [nome,data,hora, id_agendamento]
+      , (err, result) => {
+      if (err) {
+        console.error('Erro ao inserir agendamento:', err);
+        res.status(500).json({ error: 'Erro interno do servidor' });
+      } else {
+        console.log('alteração realizada com sucesso:', result);
+        res.status(200).json({ message: 'Agendamento alterado com êxito' });
+      }
+    });
+  } catch (error) {
+    console.error('Erro durante o processamento do agendamento:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+})
+
+app.delete("/exclude/:id", (req, res) =>{
+  const id_agendamento = req.params.id
+  console.log("backend")
+  try{
+    db.query(`delete from agendamento where id_agendamento = ${id_agendamento}`, (err, result) =>{
+      if(err){
+        console.error
+        res.status(500).json()
+      } else {
+        console.log("exclusão realizada com sucesso", result);
+        res.status(200).json({message: 'Agendamento excluido com sucesso'})
+      }
+    })
+  } catch(error){
+    console.log(error)
+  }
+})
