@@ -27,21 +27,6 @@ function verifyJwt(req:any, res:any, next:any){
   })
 }
 
-// const connection = createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "forencer_data",
-// });
-
-// connection.connect((err) => {
-//   if (err) {
-//     console.error(err);
-//   } else {
-//     console.log("database connected");
-//   }
-// });
-
 const app = express();
 
 app.use(cors());
@@ -149,120 +134,132 @@ app.post("/loginP", (req, res) => {
 // boletins de ocorrencia
 
 app.post("/registrarAcidente/:id", (req,res) =>{
-  const cod_usuario = req.params.id
+  const cod_usuario = req.params.id;
+  const tipo = "acidente";
   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
   const horario = req.body.horario;
   const tipo_local = req.body.tipo_local;
   const endereco = req.body.endereco;
   const comunicante = req.body.comunicante;
-  const motorista = req.body.motorista;
-  const veiculos = req.body.veiculos;
   const relato_fato = req.body.relato_fato;
-  try{
+  const motorista = req.body.motorista
+  const veiculos = req.body.veiculos
+
+  try {
     db.query(
-      "INSERT INTO boletim_acidente SET ?",
+      "INSERT INTO boletins_unificados SET ?",
       {
+        motorista,
+        veiculos,
+        cod_usuario,
+        tipo,
         data_fato,
         horario,
         tipo_local,
         endereco,
         comunicante,
-        motorista,
-        veiculos,
         relato_fato,
-        cod_usuario
       },
-      
       function (error, results, fields) {
         console.log(error, results, fields);
-
-        if (error) throw error;
       }
-      )
-  }catch(error){
-    console.log(error)
+    );
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
 
 
 
 app.post("/registrarRoubo/:id", (req,res) =>{
-  const cod_usuario = req.params.id
-  const violencia = req.body.violencia;
-  const subtracao = req.body.subtracao;
+  const cod_usuario = req.params.id;
+  const tipo = "roubo";
   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
   const horario = req.body.horario;
   const tipo_local = req.body.tipo_local;
   const endereco = req.body.endereco;
   const comunicante = req.body.comunicante;
-  const vitima = req.body.vitima;
   const objetos = req.body.objetos;
+  const violencia= req.body.violencia;
+  const subtracao= req.body.subtracao;
+  const vitima = req.body.vitima
   const relato_fato = req.body.relato_fato;
-  try{
+  
+
+  try {
     db.query(
-      "INSERT INTO boletim_roubo SET ?",
+      "INSERT INTO boletins_unificados SET ?",
       {
+        objetos,
         violencia,
         subtracao,
+        vitima,
+        cod_usuario,
+        tipo,
         data_fato,
         horario,
         tipo_local,
         endereco,
         comunicante,
-        vitima,
-        objetos,
         relato_fato,
-        cod_usuario
       },
-      
       function (error, results, fields) {
         console.log(error, results, fields);
 
         if (error) throw error;
+
+        // Crie um token JWT e envie-o como resposta
+        const token = createJWTToken(cod_usuario);
+        res.status(200).json({ token });
       }
-      )
-  }catch(error){
-    console.log(error)
+    );
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
 
 app.post("/registrarViolenciaD/:id", (req,res) =>{
-  const cod_usuario = req.params.id
-  const violencia = req.body.violencia;
-  const obito = req.body.obito;
+  const cod_usuario = req.params.id;
+  const tipo = "violencia_domestica";
   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
   const horario = req.body.horario;
   const tipo_local = req.body.tipo_local;
   const endereco = req.body.endereco;
   const comunicante = req.body.comunicante;
-  const vitima = req.body.vitima;
-  const objetos = req.body.objetos;
   const relato_fato = req.body.relato_fato;
-  try{
+  const vitima = req.body.vitima;
+  const violencia = req.body.violencia;
+
+  try {
     db.query(
-      "INSERT INTO boletim_violenciaDomestica SET ?",
+      "INSERT INTO boletins_unificados SET ?",
       {
         violencia,
-        obito,
+        vitima,
+        cod_usuario,
+        tipo,
         data_fato,
         horario,
         tipo_local,
         endereco,
         comunicante,
-        vitima,
         relato_fato,
-        cod_usuario
       },
-      
       function (error, results, fields) {
         console.log(error, results, fields);
 
         if (error) throw error;
-        console.log(results.insertId);
+
+        // Crie um token JWT e envie-o como resposta
+        const token = createJWTToken(cod_usuario);
+        res.status(200).json({ token });
       }
-      )
-  }catch(error){
-    console.log(error)
+    );
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 })
 
@@ -309,11 +306,90 @@ app.put("/editValues/:id", (req, res) =>{
   })
 })
 
+app.post('/salvaFace/:userId', async (req, res) => {
+  try {
+    const { imageUrl, description, boletimId } = req.body;
+
+    // Insira as informações da face no banco de dados
+    const insertFaceQuery = `
+      INSERT INTO face (imagem, descricao)
+      VALUES (?, ?)
+    `;
+    const insertFaceValues = [imageUrl, description];
+
+    db.query(insertFaceQuery, insertFaceValues, (insertError, insertResults) => {
+      if (insertError) {
+        console.error('Erro ao inserir informações da face: ' + insertError.stack);
+        return res.status(500).json({ error: 'Erro interno do servidor' });
+      }
+
+      // Atualize a tabela de boletins de ocorrência com o ID da imagem
+      let updateBoletimQuery =`UPDATE boletins_unificados SET cod_face = ? WHERE id_fato = ?`
+      const updateBoletimValues = [insertResults.insertId, boletimId];
+
+      db.query(updateBoletimQuery, updateBoletimValues, (updateError) => {
+        if (updateError) {
+          console.error('Erro ao atualizar boletim com ID da face: ' + updateError.stack);
+          return res.status(500).json({ error: 'Erro interno do servidor' });
+        }
+
+        // Envie uma resposta de sucesso
+        res.status(200).json({ success: true, message: 'Informações salvas com sucesso.' });
+      });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Erro ao salvar informações.' });
+  }
+});
+
+// app.post("/registrarIncidente/:id", (req, res) => {
+//   const cod_usuario = req.params.id;
+//   const tipo_boletim = req.body.tipo_boletim;
+//   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
+//   const horario = req.body.horario;
+//   const tipo_local = req.body.tipo_local;
+//   const endereco = req.body.endereco;
+//   const comunicante = req.body.comunicante;
+//   const relato_fato = req.body.relato_fato;
+
+//   try {
+//     db.query(
+//       "INSERT INTO boletins_unificados SET ?",
+//       {
+//         cod_usuario,
+//         tipo_boletim,
+//         data_fato,
+//         horario,
+//         tipo_local,
+//         endereco,
+//         comunicante,
+//         relato_fato,
+//       },
+//       function (error, results, fields) {
+//         console.log(error, results, fields);
+
+//         if (error) throw error;
+
+//         // Crie um token JWT e envie-o como resposta
+//         const token = createJWTToken(cod_usuario);
+//         res.status(200).json({ token });
+//       }
+//     );
+//   } catch (error) {
+//     console.log(error);
+//     res.status(500).json({ error: 'Erro interno do servidor' });
+//   }
+// });
+
 app.get('/:id', (req, res) => {
   const codUsuario = req.params.id;
 
-  const query = ` SELECT 'acidente' as tipo, data_fato, comunicante, endereco, relato_fato FROM boletim_acidente WHERE cod_usuario = ${codUsuario}  UNION SELECT 'roubo' as tipo, data_fato, comunicante, endereco, relato_fato FROM boletim_roubo WHERE cod_usuario = ${codUsuario} UNION SELECT 'violencia domestica' as tipo, data_fato, comunicante, endereco, relato_fato FROM boletim_violenciadomestica WHERE cod_usuario = ${codUsuario}`;
-
+  const query = `
+    SELECT id_fato, tipo, data_fato, horario, tipo_local, endereco, comunicante, relato_fato
+    FROM boletins_unificados
+    WHERE cod_usuario = ${codUsuario}
+  `;
   db.query(query, (error, results) => {
     if (error) {
       console.error('Erro ao executar a consulta: ' + error.stack);
@@ -322,47 +398,3 @@ app.get('/:id', (req, res) => {
     res.json(results);
   });
 });
-
-
-// const openai = new OpenAI({
-//   apiKey: "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",
-//   dangerouslyAllowBrowser: true
-// });
-
-// app.post("/generate", async (req, res) => {
-//   try {
-//     const prompt = "A cute baby sea otter";
-
-//     const aiResponse = await openai.completion.create({
-//       engine: 'text-davinci-003', // Verifique se o engine está correto de acordo com a versão da API que você está usando
-//       prompt,
-//       n: 1,
-//       max_tokens: 1024,
-//     });
-
-//     const image = aiResponse.choices[0].text.trim();
-//     console.log(image);
-
-//     res.status(200).json({ photo: image });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send(error?.response?.data?.error?.message || 'Something went wrong');
-//   }
-// });
-
-
-
-
-// app.use(express.static('build')); // Serve os arquivos estáticos do seu aplicativo React (se estiver usando create-react-app, por exemplo)
-
-// // Configura o proxy para a API da OpenAI
-// app.use('/v1/images', createProxyMiddleware({
-//   target: 'https://api.openai.com',
-//   changeOrigin: true,
-//   pathRewrite: {
-//     '^/v1/images': '/v1/images'
-//   },
-//   timeout: 60000
-// }));
-
-
