@@ -3,6 +3,8 @@ import cors from "cors";
 import md5 from "md5";
 import jwt from "jsonwebtoken";
 import { db } from "./controllers/db";
+import fs from 'fs';
+import path from 'path';
 
 
 const secret = 'forenserSecurity';
@@ -310,12 +312,16 @@ app.post('/salvaFace/:userId', async (req, res) => {
   try {
     const { imageUrl, description, boletimId } = req.body;
 
-    // Insira as informações da face no banco de dados
-    const insertFaceQuery = `
-      INSERT INTO face (imagem, descricao)
-      VALUES (?, ?)
-    `;
-    const insertFaceValues = [imageUrl, description];
+    const imageFileName = `generated_image_${Date.now()}.png`;
+    const imageRelativePath = path.join('uploads', imageFileName);
+    const imagePath = path.join(__dirname, 'uploads', imageFileName);
+    const imageData = imageUrl.replace(/^data:image\/\w+;base64,/, '');
+    const imageBuffer = Buffer.from(imageData, 'base64');
+
+    fs.writeFileSync(imagePath, imageBuffer);
+
+    const insertFaceQuery = 'INSERT INTO face (imagem, descricao) VALUES (?, ?)';
+    const insertFaceValues = [imagePath, description];
 
     db.query(insertFaceQuery, insertFaceValues, (insertError, insertResults) => {
       if (insertError) {
@@ -323,8 +329,7 @@ app.post('/salvaFace/:userId', async (req, res) => {
         return res.status(500).json({ error: 'Erro interno do servidor' });
       }
 
-      // Atualize a tabela de boletins de ocorrência com o ID da imagem
-      let updateBoletimQuery =`UPDATE boletins_unificados SET cod_face = ? WHERE id_fato = ?`
+      const updateBoletimQuery = 'UPDATE boletins_unificados SET cod_face = ? WHERE id_fato = ?';
       const updateBoletimValues = [insertResults.insertId, boletimId];
 
       db.query(updateBoletimQuery, updateBoletimValues, (updateError) => {
@@ -333,7 +338,6 @@ app.post('/salvaFace/:userId', async (req, res) => {
           return res.status(500).json({ error: 'Erro interno do servidor' });
         }
 
-        // Envie uma resposta de sucesso
         res.status(200).json({ success: true, message: 'Informações salvas com sucesso.' });
       });
     });
@@ -343,52 +347,16 @@ app.post('/salvaFace/:userId', async (req, res) => {
   }
 });
 
-// app.post("/registrarIncidente/:id", (req, res) => {
-//   const cod_usuario = req.params.id;
-//   const tipo_boletim = req.body.tipo_boletim;
-//   const data_fato = dateFormatter.format(new Date(req.body.data_fato));
-//   const horario = req.body.horario;
-//   const tipo_local = req.body.tipo_local;
-//   const endereco = req.body.endereco;
-//   const comunicante = req.body.comunicante;
-//   const relato_fato = req.body.relato_fato;
 
-//   try {
-//     db.query(
-//       "INSERT INTO boletins_unificados SET ?",
-//       {
-//         cod_usuario,
-//         tipo_boletim,
-//         data_fato,
-//         horario,
-//         tipo_local,
-//         endereco,
-//         comunicante,
-//         relato_fato,
-//       },
-//       function (error, results, fields) {
-//         console.log(error, results, fields);
 
-//         if (error) throw error;
-
-//         // Crie um token JWT e envie-o como resposta
-//         const token = createJWTToken(cod_usuario);
-//         res.status(200).json({ token });
-//       }
-//     );
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({ error: 'Erro interno do servidor' });
-//   }
-// });
 
 app.get('/:id', (req, res) => {
   const codUsuario = req.params.id;
 
   const query = `
-    SELECT id_fato, tipo, data_fato, horario, tipo_local, endereco, comunicante, relato_fato
-    FROM boletins_unificados
-    WHERE cod_usuario = ${codUsuario}
+    SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato, face.imagem
+    FROM boletins_unificados inner join face on  boletins_unificados.cod_face = face.id_face
+    WHERE  boletins_unificados.cod_usuario = ${codUsuario}
   `;
   db.query(query, (error, results) => {
     if (error) {
@@ -509,3 +477,5 @@ app.delete("/exclude/:id", (req, res) =>{
     console.log(error)
   }
 })
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
