@@ -106,7 +106,7 @@ app.post("/loginP", (req, res) => {
             const idUsu = result[0].id_usu;
             const telefoneUsuario = result[0].telefone;
             const sexoUsuario = result[0].sexo;
-            const cpfUsuario = result[0].cpf;
+            const cpfUsuario = result[0].cpf_usu;
 
             // Crie o payload do token com o nome do usuário
             const payload = {
@@ -312,16 +312,16 @@ app.post('/salvaFace/:userId', async (req, res) => {
   try {
     const { imageUrl, description, boletimId } = req.body;
 
-    const imageFileName = `generated_image_${Date.now()}.png`;
-    const imageRelativePath = path.join('uploads', imageFileName);
-    const imagePath = path.join(__dirname, 'uploads', imageFileName);
-    const imageData = imageUrl.replace(/^data:image\/\w+;base64,/, '');
-    const imageBuffer = Buffer.from(imageData, 'base64');
+    // const imageFileName = `generated_image_${Date.now()}.png`;
+    // const imageRelativePath = path.join('uploads', imageFileName);
+    // const imagePath = path.join(__dirname, 'uploads', imageFileName);
+    // const imageData = imageUrl.replace(/^data:image\/\w+;base64,/, '');
+    // const imageBuffer = Buffer.from(imageData, 'base64');
 
-    fs.writeFileSync(imagePath, imageBuffer);
+    // fs.writeFileSync(imagePath, imageBuffer);
 
     const insertFaceQuery = 'INSERT INTO face (imagem, descricao) VALUES (?, ?)';
-    const insertFaceValues = [imagePath, description];
+    const insertFaceValues = [imageUrl, description];
 
     db.query(insertFaceQuery, insertFaceValues, (insertError, insertResults) => {
       if (insertError) {
@@ -350,12 +350,49 @@ app.post('/salvaFace/:userId', async (req, res) => {
 
 
 
+app.get('/sesstrue/:id', (req, res) => {
+  const codUsuario = req.params.id;
+
+  const queryWithImages = `
+    SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato, face.imagem
+    FROM boletins_unificados
+    LEFT JOIN face ON  boletins_unificados.cod_face = face.id_face
+    WHERE  boletins_unificados.cod_usuario = ${codUsuario}
+  `;
+
+  db.query(queryWithImages, (errorWithImages, resultsWithImages) => {
+    if (errorWithImages) {
+      console.error('Erro ao executar a consulta com imagens: ' + errorWithImages.stack);
+      return res.status(500).json({ error: 'Erro interno do servidor' });
+    }
+
+    const queryWithoutImages = `
+      SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato
+      FROM boletins_unificados
+      WHERE  boletins_unificados.cod_usuario = ${codUsuario}
+        AND boletins_unificados.cod_face IS NULL
+    `;
+
+    db.query(queryWithoutImages, (errorWithoutImages, resultsWithoutImages) => {
+      if (errorWithoutImages) {
+        console.error('Erro ao executar a consulta sem imagens: ' + errorWithoutImages.stack);
+        return res.status(500).json({ error: 'Erro interno do servidor' });
+      }
+
+      // Combine os resultados das duas consultas
+      const combinedResults = [...resultsWithImages, ...resultsWithoutImages];
+
+      res.json(combinedResults);
+    });
+  });
+});
+
 app.get('/:id', (req, res) => {
   const codUsuario = req.params.id;
 
   const query = `
-    SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato, face.imagem
-    FROM boletins_unificados inner join face on  boletins_unificados.cod_face = face.id_face
+    SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato
+    FROM boletins_unificados
     WHERE  boletins_unificados.cod_usuario = ${codUsuario}
   `;
   db.query(query, (error, results) => {
