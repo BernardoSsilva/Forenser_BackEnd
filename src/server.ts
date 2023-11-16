@@ -164,7 +164,14 @@ app.post("/registrarAcidente/:id", (req,res) =>{
       },
       function (error, results, fields) {
         console.log(error, results, fields);
+
+        if (error) throw error;
+
+        // Crie um token JWT e envie-o como resposta
+        const token = createJWTToken(cod_usuario);
+        res.status(200).json({ token });
       }
+      
     );
   } catch (error) {
     console.log(error);
@@ -276,9 +283,9 @@ app.listen(3001, () => {
   console.log("Listen on port 3001");
 });
 
-app.delete('/exclude_porfile/:email',(req, res) => {
-  const email = req.params.email;
-  db.query("DELETE FROM usuario WHERE email_usu = ?", [email], (err, result) => {
+app.delete('/exclude_porfile/:id',(req, res) => {
+  const id = req.params.id;
+  db.query("DELETE FROM usuario WHERE id_usu = ?", [id], (err, result) => {
     if (err) {
       console.log(err);
       res.status(500).json({ error: 'Erro ao excluir o perfil.' });
@@ -292,21 +299,42 @@ app.delete('/exclude_porfile/:email',(req, res) => {
 // to do
 
 
-app.put("/editValues/:id", (req, res) =>{
-  
-  const id = req.params.id
+app.put("/editValues/:id", (req, res) => {
+  const id = req.params.id;
   const email = req.body.emailField;
   const telefone = req.body.telefoneField;
 
-  console.log(email, telefone)
-  db.query("UPDATE usuario SET email_usu = ?, telefone = ? WHERE id_usu = ?",[email,telefone, id],(err, result) => {
-    if(err){
-      console.log(err)
-    }else{
-      console.log(result)
+  // Consulta para verificar se os valores são diferentes
+  db.query("SELECT email_usu, telefone FROM usuario WHERE id_usu = ?", [id], (err, rows) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).json({ message: "Erro ao consultar o banco de dados" });
     }
-  })
-})
+
+    if (rows.length === 1) {
+      const dbEmail = rows[0].email_usu;
+      const dbTelefone = rows[0].telefone;
+
+      // Verifica se os valores são diferentes
+      if (email !== dbEmail || telefone !== dbTelefone) {
+        // Realiza o UPDATE somente se os valores forem diferentes
+        db.query("UPDATE usuario SET email_usu = ?, telefone = ? WHERE id_usu = ?", [email, telefone, id], (updateErr, result) => {
+          if (updateErr) {
+            console.log(updateErr);
+            return res.status(500).json({ message: "Erro ao atualizar os dados no banco de dados" });
+          }
+          console.log(result);
+          return res.status(200).json({ message: "Alteração realizada com sucesso" });
+        });
+      } else {
+        // Se os valores forem iguais, retorna uma mensagem informando que não houve alteração
+        return res.status(200).json({ message: "Valores enviados são idênticos aos já existentes no banco de dados" });
+      }
+    } else {
+      return res.status(404).json({ message: "Usuário não encontrado" });
+    }
+  });
+});
 
 app.post('/salvaFace/:userId', async (req, res) => {
   try {
@@ -331,6 +359,7 @@ app.post('/salvaFace/:userId', async (req, res) => {
 
       const updateBoletimQuery = 'UPDATE boletins_unificados SET cod_face = ? WHERE id_fato = ?';
       const updateBoletimValues = [insertResults.insertId, boletimId];
+      
 
       db.query(updateBoletimQuery, updateBoletimValues, (updateError) => {
         if (updateError) {
@@ -354,10 +383,11 @@ app.get('/sesstrue/:id', (req, res) => {
   const codUsuario = req.params.id;
 
   const queryWithImages = `
-    SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato, face.imagem
-    FROM boletins_unificados
-    LEFT JOIN face ON  boletins_unificados.cod_face = face.id_face
-    WHERE  boletins_unificados.cod_usuario = ${codUsuario}
+  SELECT DISTINCT boletins_unificados.id_fato, boletins_unificados.tipo, boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato, face.imagem
+  FROM boletins_unificados
+  LEFT JOIN face ON boletins_unificados.cod_face = face.id_face
+  WHERE boletins_unificados.cod_usuario = ${codUsuario}
+  
   `;
 
   db.query(queryWithImages, (errorWithImages, resultsWithImages) => {
@@ -366,26 +396,33 @@ app.get('/sesstrue/:id', (req, res) => {
       return res.status(500).json({ error: 'Erro interno do servidor' });
     }
 
-    const queryWithoutImages = `
-      SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato
-      FROM boletins_unificados
-      WHERE  boletins_unificados.cod_usuario = ${codUsuario}
-        AND boletins_unificados.cod_face IS NULL
-    `;
+    // const queryWithoutImages = `
+    //   SELECT  boletins_unificados.id_fato,  boletins_unificados.tipo,  boletins_unificados.data_fato,  boletins_unificados.horario,  boletins_unificados.tipo_local,  boletins_unificados.endereco,  boletins_unificados.comunicante,  boletins_unificados.relato_fato
+    //   FROM boletins_unificados
+    //   WHERE  boletins_unificados.cod_usuario = ${codUsuario}
+    //     AND boletins_unificados.cod_face IS NULL
+    // `;
 
-    db.query(queryWithoutImages, (errorWithoutImages, resultsWithoutImages) => {
-      if (errorWithoutImages) {
-        console.error('Erro ao executar a consulta sem imagens: ' + errorWithoutImages.stack);
-        return res.status(500).json({ error: 'Erro interno do servidor' });
-      }
+    // db.query(queryWithoutImages, (errorWithoutImages, resultsWithoutImages) => {
+    //   if (errorWithoutImages) {
+    //     console.error('Erro ao executar a consulta sem imagens: ' + errorWithoutImages.stack);
+    //     return res.status(500).json({ error: 'Erro interno do servidor' });
+    //   }
 
       // Combine os resultados das duas consultas
-      const combinedResults = [...resultsWithImages, ...resultsWithoutImages];
+      const combinedResults = [...resultsWithImages];
+      
+      // const uniqueBoletim = combinedResults.filter(
+      //   (item, index, self) => index === self.findIndex((t) => (
+      //     t.id_fato === item.id_fato // Troque pelo campo de identificação apropriado
+      //   ))
+      // );
 
+      // setBoletim(uniqueBoletim);
       res.json(combinedResults);
     });
   });
-});
+
 
 app.get('/:id', (req, res) => {
   const codUsuario = req.params.id;
