@@ -18,6 +18,6 @@ model User{
   password String
   phoneNumber String
   cpf String 
-  bornDate DateTime
+  bornDate DateTime @default(now())
   @@map("users")
 }
