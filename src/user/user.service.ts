@@ -7,10 +7,11 @@ export interface CreateUserInterface {
   phoneNumber: string;
   cpf: string;
 }
+
+export interface UpdateUserInterface extends Partial<CreateUserInterface> {}
 export class UserService {
   async createUser(createUserData: CreateUserInterface) {
     try {
-  
       const userAlreadyExists = await prisma.user.findUnique({
         where: {
           email: createUserData.email,
@@ -43,19 +44,52 @@ export class UserService {
     }
   }
 
-  async getAllUsers(){
-    try{
+  async getAllUsers() {
+    try {
       const result = await prisma.user.findMany();
 
-      if(!result){
-        return { status: 404, body:"Bad Request error"};
-      }else if(result.length == 0){
-        return {status: 204, body:"Empty response"}
+      if (!result) {
+        return { status: 404, body: "Bad Request error" };
+      } else if (result.length == 0) {
+        return { status: 204, body: "Empty response" };
       }
-      return {status: 200, body:result}
-    }catch(err){
-      console.log(err)
-      return{ status: 400, body: "Bad Request"}
+      return { status: 200, body: result };
+    } catch (err) {
+      console.log(err);
+      return { status: 400, body: "Bad Request" };
+    }
+  }
+
+  async getUserById(id: string) {
+    try {
+      const result = await prisma.user.findUnique({ where: { id } });
+
+      if (!result) {
+        return { status: 204, body: "Empty resource" };
+      }
+      return { status: 200, body: result };
+    } catch (err) {
+      console.log(err);
+      return false;
+    }
+  }
+
+  async updateUser(
+    id: string,
+    { name, email, hashPassword, phoneNumber }: UpdateUserInterface
+  ) {
+    try {
+      const result = await prisma.user.update({
+        where: { id },
+        data: { name, email, password: hashPassword, phoneNumber },
+      });
+      if (!result) {
+        return false;
+      }
+      return { status: 202, body: result };
+    } catch (err) {
+      console.log(err);
+      return false;
     }
   }
 }
