@@ -17,4 +17,8 @@ export class UserController {
       cpf
     });
   }
+
+  async getAllUsers(){
+    return await this.userService.getAllUsers();
+  }
 }

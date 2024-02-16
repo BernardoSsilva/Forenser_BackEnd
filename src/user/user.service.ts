@@ -42,4 +42,20 @@ export class UserService {
       return { status: 400, body: "Bad Request error" };
     }
   }
+
+  async getAllUsers(){
+    try{
+      const result = await prisma.user.findMany();
+
+      if(!result){
+        return { status: 404, body:"Bad Request error"};
+      }else if(result.length == 0){
+        return {status: 204, body:"Empty response"}
+      }
+      return {status: 200, body:result}
+    }catch(err){
+      console.log(err)
+      return{ status: 400, body: "Bad Request"}
+    }
+  }
 }
