@@ -9,13 +9,17 @@ const userController = new UserController(userService);
 userRoute.get("/", async (req, res) => {
   const result = await userController.getAllUsers()
   if(!result){
-    return res.status(404).send("Bad request error")
+    return res.status(400).send("Bad request error")
   }
   return res.status(result.status).send(result.body)
 });
 
-userRoute.get("/:id", (req, res) => {
-  
+userRoute.get("/:id", async (req, res) => {
+  const result = await userController.getUserById(req.params.id);
+  if(!result){
+    return res.status(400).send("Bad request error")
+  }
+  return res.status(result.status).send(result.body)
 });
 
 userRoute.post("/register", async (req, res) => {

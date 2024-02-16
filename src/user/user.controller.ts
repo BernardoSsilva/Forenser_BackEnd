@@ -21,4 +21,8 @@ export class UserController {
   async getAllUsers(){
     return await this.userService.getAllUsers();
   }
+
+  async getUserById(id: string){
+    return await this.userService.getUserById(id)
+  }
 }

@@ -58,4 +58,18 @@ export class UserService {
       return{ status: 400, body: "Bad Request"}
     }
   }
+
+  async getUserById(id:string){
+    try{
+      const result = await prisma.user.findUnique({where:{id}})
+
+      if(!result){
+        return {status: 204, body:"Empty resource"}
+      }
+      return {status:200, body:result}
+    }catch(err){
+      console.log(err)
+      return false
+    }
+  }
 }
