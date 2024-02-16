@@ -5,23 +5,16 @@ import * as bcrypt from "bcrypt";
 export class UserController {
   constructor(private userService: UserService) {}
 
-  async createUser({
-    name,
-    email,
-    password,
-    phoneNumber,
-    cpf,
-    bornDate,
-  }: CreateUserDto) {
+  async createUser({ name, email, password, phoneNumber, cpf }: CreateUserDto) {
     const hashPassword = await bcrypt.hash(password, 10);
+    
 
     return await this.userService.createUser({
       name,
       email,
       hashPassword,
       phoneNumber,
-      cpf,
-      bornDate,
+      cpf
     });
   }
 }

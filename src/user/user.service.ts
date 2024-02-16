@@ -6,11 +6,11 @@ export interface CreateUserInterface {
   hashPassword: string;
   phoneNumber: string;
   cpf: string;
-  bornDate: Date;
 }
 export class UserService {
   async createUser(createUserData: CreateUserInterface) {
     try {
+  
       const userAlreadyExists = await prisma.user.findUnique({
         where: {
           email: createUserData.email,
@@ -30,7 +30,6 @@ export class UserService {
           email: createUserData.email,
           phoneNumber: createUserData.phoneNumber,
           cpf: createUserData.cpf,
-          bornDate: createUserData.bornDate,
         },
       });
 

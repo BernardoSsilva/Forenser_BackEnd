@@ -11,7 +11,6 @@ userRoute.get("/", async (req, res) => {});
 userRoute.get("/:id", (req, res) => {});
 
 userRoute.post("/register", async (req, res) => {
-  console.log(req.body)
   const result = await userController.createUser(req.body);
   if (!result) {
     res.status(400).end("Bad request error");
