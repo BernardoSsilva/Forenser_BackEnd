@@ -31,7 +31,13 @@ userRoute.post("/register", async (req, res) => {
   res.status(result.status).end(result.body);
 });
 
-userRoute.patch("/edit/:id", (req, res) => {});
+userRoute.patch("/edit/:id", async (req, res) => {
+  const result = await userController.editUser(req.params.id, req.body)
+  if(!result){
+    return res.status(400).end("Bad request error")
+  }
+  return res.status(result.status).send(result.body)
+});
 
 userRoute.delete("/delete/:id", (req, res) => {});
 
