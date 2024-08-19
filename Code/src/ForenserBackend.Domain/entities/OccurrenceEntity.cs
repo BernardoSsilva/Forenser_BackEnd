@@ -15,7 +15,7 @@ namespace ForenserBackend.Domain.entities
 
         public  string OcourencyDescription { get; set; } = string.Empty;
 
-        public DateTime OcourencyDate { get; set; }
+        public required DateTime OcourencyDate { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public DateTime LastUpdatedAt { get; set; } 

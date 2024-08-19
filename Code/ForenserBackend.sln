@@ -7,19 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F7BDCFB8-E59
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6081106A-69F8-4046-A5C4-040E21926778}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.API", "..\Code\src\ForenserBackend.API\ForenserBackend.API.csproj", "{94AAB873-7E24-475C-A29E-6C33D5C101BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForenserBackend.API", "src\ForenserBackend.API\ForenserBackend.API.csproj", "{94AAB873-7E24-475C-A29E-6C33D5C101BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.Communication", "..\Code\src\ForenserBackend.Communication\ForenserBackend.Communication.csproj", "{54F3A6F7-0224-46DB-80AC-C9BDF8383A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForenserBackend.Communication", "src\ForenserBackend.Communication\ForenserBackend.Communication.csproj", "{54F3A6F7-0224-46DB-80AC-C9BDF8383A9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.Infrastructure", "..\Code\src\ForenserBackend.Infrastructure\ForenserBackend.Infrastructure.csproj", "{43AB0FD2-2DA6-42CF-8C32-141202BDB853}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForenserBackend.Infrastructure", "src\ForenserBackend.Infrastructure\ForenserBackend.Infrastructure.csproj", "{43AB0FD2-2DA6-42CF-8C32-141202BDB853}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.Domain", "..\Code\src\ForenserBackend.Domain\ForenserBackend.Domain.csproj", "{19E08831-6A7F-403C-838B-1B45294243C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForenserBackend.Domain", "src\ForenserBackend.Domain\ForenserBackend.Domain.csproj", "{19E08831-6A7F-403C-838B-1B45294243C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.Application", "..\Code\src\ForenserBackend.Application\ForenserBackend.Application.csproj", "{F4391A04-AEC1-4753-B7B2-5F25FAA3EACF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForenserBackend.Application", "src\ForenserBackend.Application\ForenserBackend.Application.csproj", "{F4391A04-AEC1-4753-B7B2-5F25FAA3EACF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.Authentication", "..\Code\src\ForenserBackend.Authentication\ForenserBackend.Authentication.csproj", "{C644CF5A-04BD-40C7-9C1B-2B53B3BE51A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForenserBackend.Authentication", "src\ForenserBackend.Authentication\ForenserBackend.Authentication.csproj", "{C644CF5A-04BD-40C7-9C1B-2B53B3BE51A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.Tests", "..\Code\tests\ForenserBackend.Tests\ForenserBackend.Tests.csproj", "{11BCAD1C-9419-4F03-9CEC-C62EFBDEB150}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForenserBackend.Tests", "tests\ForenserBackend.Tests\ForenserBackend.Tests.csproj", "{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,10 +51,10 @@ Global
 		{C644CF5A-04BD-40C7-9C1B-2B53B3BE51A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C644CF5A-04BD-40C7-9C1B-2B53B3BE51A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C644CF5A-04BD-40C7-9C1B-2B53B3BE51A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11BCAD1C-9419-4F03-9CEC-C62EFBDEB150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11BCAD1C-9419-4F03-9CEC-C62EFBDEB150}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11BCAD1C-9419-4F03-9CEC-C62EFBDEB150}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11BCAD1C-9419-4F03-9CEC-C62EFBDEB150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,7 +66,7 @@ Global
 		{19E08831-6A7F-403C-838B-1B45294243C1} = {F7BDCFB8-E59F-4AF7-A5A4-C931FC7875DE}
 		{F4391A04-AEC1-4753-B7B2-5F25FAA3EACF} = {F7BDCFB8-E59F-4AF7-A5A4-C931FC7875DE}
 		{C644CF5A-04BD-40C7-9C1B-2B53B3BE51A5} = {F7BDCFB8-E59F-4AF7-A5A4-C931FC7875DE}
-		{11BCAD1C-9419-4F03-9CEC-C62EFBDEB150} = {6081106A-69F8-4046-A5C4-040E21926778}
+		{9B46A9AD-E11A-43CA-9CB4-B84DAF659099} = {6081106A-69F8-4046-A5C4-040E21926778}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2D029304-4916-4896-A045-7AD11B4A1B3D}
