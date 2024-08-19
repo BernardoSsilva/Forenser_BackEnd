@@ -10,4 +10,4 @@ Durante o processo investigativo brasileiro a coleta de parte dos dados pode ser
 
 ## Banco de dados
 
-![DatabaseDiagram drawio (4)](https://github.com/user-attachments/assets/95162879-3e33-4514-8f8d-b140e0aca050)
+![DatabaseDiagram drawio (5)](https://github.com/user-attachments/assets/a7e1bd92-5089-45ba-9a71-260b9c62da30)
