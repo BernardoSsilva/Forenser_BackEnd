@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BlgoCEClPMc=",
+  "dgSpecHash": "VBQyOD86JnM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj",
+  "projectFilePath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

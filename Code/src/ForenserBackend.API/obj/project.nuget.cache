@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4zj3CbDp1bs=",
+  "dgSpecHash": "V0NmNYnvhc8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\ForenserBackend.API.csproj",
+  "projectFilePath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\ForenserBackend.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bernardo.silva\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\bernardo.silva\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

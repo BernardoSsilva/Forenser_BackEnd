@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj": {}
+    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj": {
+    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj",
+        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj",
         "projectName": "ForenserBackend.Authentication",
-        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj",
+        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\ForenserBackend.Authentication.csproj",
         "packagesPath": "C:\\Users\\bernardo.silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\obj\\",
+        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Authentication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,14 +33,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj": {
-                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj"
+              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj": {
+                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj"
               },
-              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
-                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj"
+              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
+                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj"
               },
-              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj"
+              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj": {
+    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj",
+        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj",
         "projectName": "ForenserBackend.Communication",
-        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj",
+        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj",
         "packagesPath": "C:\\Users\\bernardo.silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\obj\\",
+        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -108,8 +108,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
-                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj"
+              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
+                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj"
               }
             }
           }
@@ -148,14 +148,14 @@
         }
       }
     },
-    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
+    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj",
         "projectName": "ForenserBackend.Domain",
-        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj",
+        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj",
         "packagesPath": "C:\\Users\\bernardo.silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\obj\\",
+        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -213,14 +213,14 @@
         }
       }
     },
-    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj": {
+    "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj",
         "projectName": "ForenserBackend.Infrastructure",
-        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\bernardo.silva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -242,8 +242,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
-                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj"
+              "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj": {
+                "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj"
               }
             }
           }
