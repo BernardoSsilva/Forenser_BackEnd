@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForenserBackend.Communication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b7466d5bcb1e8dfc2950a24f9832e87d6c0a91c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+910ea7fb68111eaf1e8f5f3c814df2fc74ad54b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForenserBackend.Communication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForenserBackend.Communication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
