@@ -25,7 +25,7 @@ namespace ForenserBackend.Domain.entities
         public List<string> ObjectList { get; set; } = [];
 
         public List<string> Vitms { get; set; } = [];
-        public List<string> Veicles { get; set; } = [];
+       
         public List<string> WitnessList { get; set; } = [];
         public List<string> ReferencePoints { get; set; } = [];
     }
