@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ForenserBackend.Infrastructure.Migrations
 {
     [DbContext(typeof(ForenserDbContext))]
-    [Migration("20240820130225_firstMigration")]
-    partial class firstMigration
+    [Migration("20240820142835_ReconfigureRelations8")]
+    partial class ReconfigureRelations8
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,11 +50,18 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("OccurrenceId")
+                        .HasColumnType("text");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OccurrenceId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Images");
                 });
@@ -74,21 +81,20 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text[]");
 
-                    b.Property<string>("OcourencyCity")
+                    b.Property<string>("OccurrenceCity")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("OcourencyDate")
+                    b.Property<DateTime>("OccurrenceDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("OcourencyDescription")
-                        .IsRequired()
+                    b.Property<string>("OccurrenceDescription")
                         .HasColumnType("text");
 
-                    b.Property<int>("OcourencyState")
+                    b.Property<int>("OccurrenceState")
                         .HasColumnType("integer");
 
-                    b.Property<string>("OcourencyStreet")
+                    b.Property<string>("OccurrenceStreet")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -112,6 +118,8 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .HasColumnType("text[]");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Occurrences");
                 });
@@ -158,7 +166,13 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Reports");
                 });
@@ -195,6 +209,8 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("ServiceSchedules");
                 });
@@ -244,7 +260,15 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("OccurrenceId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("OcurrenceId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -262,7 +286,100 @@ namespace ForenserBackend.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("OccurrenceId");
+
+                    b.HasIndex("UserId");
+
                     b.ToTable("Vehicles");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.ImageEntity", b =>
+                {
+                    b.HasOne("ForenserBackend.Domain.entities.OccurrenceEntity", "Occurrence")
+                        .WithMany("Images")
+                        .HasForeignKey("OccurrenceId");
+
+                    b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
+                        .WithMany("Images")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Occurrence");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.OccurrenceEntity", b =>
+                {
+                    b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
+                        .WithMany("Occurrences")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.ReportEntity", b =>
+                {
+                    b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
+                        .WithMany("Reports")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.ServiceScheduleEntity", b =>
+                {
+                    b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
+                        .WithMany("Schedules")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.VehicleEntity", b =>
+                {
+                    b.HasOne("ForenserBackend.Domain.entities.OccurrenceEntity", "Occurrence")
+                        .WithMany("Vehicles")
+                        .HasForeignKey("OccurrenceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
+                        .WithMany("Vehicles")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Occurrence");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.OccurrenceEntity", b =>
+                {
+                    b.Navigation("Images");
+
+                    b.Navigation("Vehicles");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.UserEntity", b =>
+                {
+                    b.Navigation("Images");
+
+                    b.Navigation("Occurrences");
+
+                    b.Navigation("Reports");
+
+                    b.Navigation("Schedules");
+
+                    b.Navigation("Vehicles");
                 });
 #pragma warning restore 612, 618
         }

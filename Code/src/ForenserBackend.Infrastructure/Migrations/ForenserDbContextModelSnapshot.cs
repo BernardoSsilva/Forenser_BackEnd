@@ -47,16 +47,13 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("OcurrenceId")
-                        .HasColumnType("text");
-
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OcurrenceId");
+                    b.HasIndex("OccurenceId");
 
                     b.HasIndex("UserId");
 
@@ -78,21 +75,20 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text[]");
 
-                    b.Property<string>("OcourencyCity")
+                    b.Property<string>("OccurrenceCity")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("OcourencyDate")
+                    b.Property<DateTime>("OccurrenceDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("OcourencyDescription")
-                        .IsRequired()
+                    b.Property<string>("OccurrenceDescription")
                         .HasColumnType("text");
 
-                    b.Property<int>("OcourencyState")
+                    b.Property<int>("OccurrenceState")
                         .HasColumnType("integer");
 
-                    b.Property<string>("OcourencyStreet")
+                    b.Property<string>("OccurrenceStreet")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -258,15 +254,7 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("OccurrenceId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("OcurrenceId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -284,18 +272,20 @@ namespace ForenserBackend.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OccurrenceId");
+                    b.HasIndex("OcurrenceId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserRegisterId");
 
                     b.ToTable("Vehicles");
                 });
 
             modelBuilder.Entity("ForenserBackend.Domain.entities.ImageEntity", b =>
                 {
-                    b.HasOne("ForenserBackend.Domain.entities.OccurrenceEntity", "Ocurrence")
+                    b.HasOne("ForenserBackend.Domain.entities.OccurrenceEntity", "Occurrence")
                         .WithMany("Images")
-                        .HasForeignKey("OcurrenceId");
+                        .HasForeignKey("OccurenceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
                         .WithMany("Images")
@@ -303,7 +293,7 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Ocurrence");
+                    b.Navigation("Occurrence");
 
                     b.Navigation("User");
                 });
@@ -345,13 +335,13 @@ namespace ForenserBackend.Infrastructure.Migrations
                 {
                     b.HasOne("ForenserBackend.Domain.entities.OccurrenceEntity", "Occurrence")
                         .WithMany("Vehicles")
-                        .HasForeignKey("OccurrenceId")
+                        .HasForeignKey("OcurrenceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
                         .WithMany("Vehicles")
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("UserRegisterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

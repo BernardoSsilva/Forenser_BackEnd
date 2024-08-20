@@ -14,7 +14,7 @@
 
         public required string VehicleMark { get; set; }
 
-        public  OccurrenceEntity Occurrence { get; set; }
-        public  UserEntity User { get; set;}
+        public OccurrenceEntity Occurrence { get; set; } = null!;
+        public UserEntity User { get; set; } = null!;
     }
 }

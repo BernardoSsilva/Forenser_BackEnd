@@ -8,14 +8,14 @@ namespace ForenserBackend.Domain.entities
 
         public required string UserId { get; set; }
 
-        public required string OcourencyStreet { get; set; }
-        public required string OcourencyCity { get; set; }
+        public required string OccurrenceStreet { get; set; }
+        public required string OccurrenceCity { get; set; }
 
-        public required Ufs OcourencyState { get; set; }
+        public required Ufs OccurrenceState { get; set; }
 
-        public  string OcourencyDescription { get; set; } = string.Empty;
+        public string? OccurrenceDescription { get; set; } 
 
-        public required DateTime OcourencyDate { get; set; }
+        public required DateTime OccurrenceDate { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public DateTime LastUpdatedAt { get; set; } 
@@ -29,9 +29,9 @@ namespace ForenserBackend.Domain.entities
         public List<string> WitnessList { get; set; } = [];
         public List<string> ReferencePoints { get; set; } = [];
 
-        public UserEntity User { get; set; }
-        public ICollection<ImageEntity> Images { get; } 
-        public ICollection<VehicleEntity> Vehicles { get;  } 
+        public UserEntity User { get; set; } = null!;
+        public ICollection<ImageEntity> Images { get; } = new List<ImageEntity>();
+        public ICollection<VehicleEntity> Vehicles { get;  } = new List<VehicleEntity>();
 
     }
 }

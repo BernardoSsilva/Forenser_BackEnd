@@ -12,14 +12,14 @@
         public required string Password { get; set; }
         public List<string> ContactPhonesNumbers { get; set; } = [];
 
-        public ICollection<ImageEntity> Images { get; }
-        public ICollection<OccurrenceEntity> Occurrences { get;} 
+        public ICollection<ImageEntity> Images { get; } = new List<ImageEntity>();
+        public ICollection<OccurrenceEntity> Occurrences { get;} = new List<OccurrenceEntity>();
 
-        public ICollection<ReportEntity> Reports { get; } 
+        public ICollection<ReportEntity> Reports { get; } = new List<ReportEntity>();
 
-        public ICollection<ServiceScheduleEntity> Schedules { get; } 
+        public ICollection<ServiceScheduleEntity> Schedules { get; } = new List<ServiceScheduleEntity>();
 
-        public ICollection<VehicleEntity> Vehicles { get;} 
+        public ICollection<VehicleEntity> Vehicles { get;} = new List<VehicleEntity>();
 
 
 

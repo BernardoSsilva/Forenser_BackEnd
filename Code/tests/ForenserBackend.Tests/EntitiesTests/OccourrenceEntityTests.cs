@@ -12,10 +12,11 @@ namespace ForenserBackend.Tests.EntitiesTests
             // Act
             var occurrence = new OccurrenceEntity
             {
-                OcourencyCity = "test city",
-                OcourencyDate = DateTime.Now,
-                OcourencyState = Ufs.AC,
-                OcourencyStreet = " test street",
+                
+                OccurrenceCity = "test city",
+                OccurrenceDate = DateTime.Now,
+                OccurrenceState = Ufs.AC,
+                OccurrenceStreet = " test street",
                 Type = OccurrenceType.theft,
                 UserId = Guid.NewGuid().ToString(),
                 
@@ -28,7 +29,7 @@ namespace ForenserBackend.Tests.EntitiesTests
             Assert.Empty(occurrence.Vitms);
             Assert.Empty(occurrence.WitnessList);
             Assert.Empty(occurrence.ReferencePoints);
-            Assert.Equal(string.Empty, occurrence.OcourencyDescription);
+            Assert.Equal(string.Empty, occurrence.OccurrenceDescription);
         }
 
         [Fact]
@@ -38,19 +39,19 @@ namespace ForenserBackend.Tests.EntitiesTests
             var occurrence = new OccurrenceEntity
             {
                 UserId = "user123",
-                OcourencyStreet = "Main Street",
-                OcourencyCity = "Springfield",
-                OcourencyState = Ufs.SP,
-                OcourencyDate = new DateTime(2024, 8, 18),
+                OccurrenceStreet = "Main Street",
+                OccurrenceCity = "Springfield",
+                OccurrenceState = Ufs.SP,
+                OccurrenceDate = new DateTime(2024, 8, 18),
                 Type = OccurrenceType.cheat
             };
 
             // Assert
             Assert.Equal("user123", occurrence.UserId);
-            Assert.Equal("Main Street", occurrence.OcourencyStreet);
-            Assert.Equal("Springfield", occurrence.OcourencyCity);
-            Assert.Equal(Ufs.SP, occurrence.OcourencyState);
-            Assert.Equal(new DateTime(2024, 8, 18), occurrence.OcourencyDate);
+            Assert.Equal("Main Street", occurrence.OccurrenceStreet);
+            Assert.Equal("Springfield", occurrence.OccurrenceCity);
+            Assert.Equal(Ufs.SP, occurrence.OccurrenceState);
+            Assert.Equal(new DateTime(2024, 8, 18), occurrence.OccurrenceDate);
             Assert.Equal(OccurrenceType.cheat, occurrence.Type);
         }
 
@@ -61,10 +62,10 @@ namespace ForenserBackend.Tests.EntitiesTests
             var occurrence = new OccurrenceEntity
             {
                 UserId = "user123",
-                OcourencyStreet = "Main Street",
-                OcourencyCity = "Springfield",
-                OcourencyState = Ufs.SP,
-                OcourencyDate = new DateTime(2024, 8, 18),
+                OccurrenceStreet = "Main Street",
+                OccurrenceCity = "Springfield",
+                OccurrenceState = Ufs.SP,
+                OccurrenceDate = new DateTime(2024, 8, 18),
                 Type = OccurrenceType.cheat
             }; ;
 
@@ -85,10 +86,10 @@ namespace ForenserBackend.Tests.EntitiesTests
             var occurrence = new OccurrenceEntity
             {
                 UserId = "user123",
-                OcourencyStreet = "Main Street",
-                OcourencyCity = "Springfield",
-                OcourencyState = Ufs.SP,
-                OcourencyDate = new DateTime(2024, 8, 18),
+                OccurrenceStreet = "Main Street",
+                OccurrenceCity = "Springfield",
+                OccurrenceState = Ufs.SP,
+                OccurrenceDate = new DateTime(2024, 8, 18),
                 Type = OccurrenceType.cheat
             }; ;
 
@@ -109,10 +110,10 @@ namespace ForenserBackend.Tests.EntitiesTests
             var occurrence = new OccurrenceEntity
             {
                 UserId = "user123",
-                OcourencyStreet = "Main Street",
-                OcourencyCity = "Springfield",
-                OcourencyState = Ufs.SP,
-                OcourencyDate = new DateTime(2024, 8, 18),
+                OccurrenceStreet = "Main Street",
+                OccurrenceCity = "Springfield",
+                OccurrenceState = Ufs.SP,
+                OccurrenceDate = new DateTime(2024, 8, 18),
                 Type = OccurrenceType.cheat
             }; ;
 
@@ -133,10 +134,10 @@ namespace ForenserBackend.Tests.EntitiesTests
             var occurrence = new OccurrenceEntity
             {
                 UserId = "user123",
-                OcourencyStreet = "Main Street",
-                OcourencyCity = "Springfield",
-                OcourencyState = Ufs.SP,
-                OcourencyDate = new DateTime(2024, 8, 18),
+                OccurrenceStreet = "Main Street",
+                OccurrenceCity = "Springfield",
+                OccurrenceState = Ufs.SP,
+                OccurrenceDate = new DateTime(2024, 8, 18),
                 Type = OccurrenceType.cheat
             }; ;
 

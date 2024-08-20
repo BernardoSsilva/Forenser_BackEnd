@@ -3,56 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820131718_RelationsCreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820131718_RelationsCreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\imageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\imageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\occurrenceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\occurrenceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\reportentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\reportentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\servicescheduleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\servicescheduleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\vehicleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\vehicleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{94AAB873-7E24-475C-A29E-6C33D5C101BD}|src\\ForenserBackend.API\\ForenserBackend.API.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{94AAB873-7E24-475C-A29E-6C33D5C101BD}|src\\ForenserBackend.API\\ForenserBackend.API.csproj|solutionrelative:src\\forenserbackend.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820130225_firstMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820130225_firstMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142956_ReconfigureRelations9.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820142956_ReconfigureRelations9.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.infrastructure\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|solutionrelative:src\\forenserbackend.infrastructure\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.infrastructure\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|solutionrelative:src\\forenserbackend.infrastructure\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\imageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\imageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{94AAB873-7E24-475C-A29E-6C33D5C101BD}|src\\ForenserBackend.API\\ForenserBackend.API.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{94AAB873-7E24-475C-A29E-6C33D5C101BD}|src\\ForenserBackend.API\\ForenserBackend.API.csproj|solutionrelative:src\\forenserbackend.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\reportentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\reportentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142835_ReconfigureRelations8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820142835_ReconfigureRelations8.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\vehicleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\vehicleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\occurrenceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\occurrenceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\servicescheduleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\servicescheduleentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.domain\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{19E08831-6A7F-403C-838B-1B45294243C1}|src\\ForenserBackend.Domain\\ForenserBackend.Domain.csproj|solutionrelative:src\\forenserbackend.domain\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142641_ReconfigureRelations7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820142641_ReconfigureRelations7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142451_ReconfigureRelations6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820142451_ReconfigureRelations6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\tests\\forenserbackend.tests\\entitiestests\\occourrenceentitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|solutionrelative:tests\\forenserbackend.tests\\entitiestests\\occourrenceentitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{94AAB873-7E24-475C-A29E-6C33D5C101BD}|src\\ForenserBackend.API\\ForenserBackend.API.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.api\\controllers\\temp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{94AAB873-7E24-475C-A29E-6C33D5C101BD}|src\\ForenserBackend.API\\ForenserBackend.API.csproj|solutionrelative:src\\forenserbackend.api\\controllers\\temp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.infrastructure\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|solutionrelative:src\\forenserbackend.infrastructure\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820141529_ReconfigureRelations5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820141529_ReconfigureRelations5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820141442_ReconfigureRelations4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ForenserBackend.Infrastructure\\Migrations\\20240820141442_ReconfigureRelations4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -67,105 +79,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20240820131718_RelationsCreation.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820131718_RelationsCreation.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820131718_RelationsCreation.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820131718_RelationsCreation.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820131718_RelationsCreation.cs",
-              "ViewState": "AQIAAM8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "20240820142956_ReconfigureRelations9.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142956_ReconfigureRelations9.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142956_ReconfigureRelations9.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142956_ReconfigureRelations9.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142956_ReconfigureRelations9.cs",
+              "ViewState": "AQIAAJ8AAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:17:18.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VehicleEntity.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAA6wBAAAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:12:23.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserEntity.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAiwA4AAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:11:19.735Z",
+              "WhenOpened": "2024-08-20T14:29:57.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ServiceScheduleEntity.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAIwBMAAAAPAAAA",
+              "Title": "20240820142835_ReconfigureRelations8.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142835_ReconfigureRelations8.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142835_ReconfigureRelations8.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142835_ReconfigureRelations8.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142835_ReconfigureRelations8.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:09:41.847Z",
+              "WhenOpened": "2024-08-20T14:28:35.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ReportEntity.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAmwBkAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:07:35.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OccurrenceEntity.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAswB8AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:06:39.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ImageEntity.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAA5wA4AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:06:19.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "20240820130225_firstMigration.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820130225_firstMigration.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820130225_firstMigration.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820130225_firstMigration.cs",
-              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820130225_firstMigration.cs",
+              "DocumentIndex": 9,
+              "Title": "20240820142641_ReconfigureRelations7.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142641_ReconfigureRelations7.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142641_ReconfigureRelations7.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142641_ReconfigureRelations7.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142641_ReconfigureRelations7.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T13:02:25.461Z",
+              "WhenOpened": "2024-08-20T14:26:41.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20240820142451_ReconfigureRelations6.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142451_ReconfigureRelations6.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142451_ReconfigureRelations6.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820142451_ReconfigureRelations6.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820142451_ReconfigureRelations6.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:24:51.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OccourrenceEntityTests.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
+              "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
+              "RelativeToolTip": "tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
+              "ViewState": "AQIAAIoAAAAAAAAAAAAmwIkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:20:43.395Z",
               "EditorCaption": ""
             },
             {
@@ -176,59 +149,139 @@
               "RelativeDocumentMoniker": "src\\ForenserBackend.API\\Controllers\\temp.cs",
               "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\Controllers\\temp.cs",
               "RelativeToolTip": "src\\ForenserBackend.API\\Controllers\\temp.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T20:36:28.987Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\Program.cs",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.API\\Program.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\Program.cs",
-              "RelativeToolTip": "src\\ForenserBackend.API\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T20:36:13.145Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\appsettings.json",
-              "RelativeDocumentMoniker": "src\\ForenserBackend.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\appsettings.json",
-              "RelativeToolTip": "src\\ForenserBackend.API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAB5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-08-19T20:35:55.129Z",
+              "WhenOpened": "2024-08-20T14:20:35.961Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\UnitOfWork.cs",
               "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\UnitOfWork.cs",
               "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\UnitOfWork.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T20:27:26.337Z",
+              "WhenOpened": "2024-08-20T14:17:21.531Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "ImageEntity.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\ImageEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:16:48.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OccurrenceEntity.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\OccurrenceEntity.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAkwCAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:15:51.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DbContext.cs",
               "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\DbContext.cs",
               "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\DbContext.cs",
               "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\DbContext.cs",
               "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\DbContext.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAwwAUAAAAiAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAAD4AAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-19T20:22:49.551Z",
+              "WhenOpened": "2024-08-20T14:15:33.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20240820141529_ReconfigureRelations5.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820141529_ReconfigureRelations5.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820141529_ReconfigureRelations5.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820141529_ReconfigureRelations5.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820141529_ReconfigureRelations5.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:15:30.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20240820141442_ReconfigureRelations4.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820141442_ReconfigureRelations4.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820141442_ReconfigureRelations4.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\Migrations\\20240820141442_ReconfigureRelations4.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\Migrations\\20240820141442_ReconfigureRelations4.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:14:42.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "VehicleEntity.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\VehicleEntity.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwAYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:14:18.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\UserEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:14:17.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServiceScheduleEntity.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\ServiceScheduleEntity.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAUwBMAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:14:11.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportEntity.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Domain\\entities\\ReportEntity.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAcwBcAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T14:14:07.301Z",
               "EditorCaption": ""
             }
           ]

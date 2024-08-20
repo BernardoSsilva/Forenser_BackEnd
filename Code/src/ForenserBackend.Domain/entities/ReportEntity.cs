@@ -23,7 +23,7 @@ namespace ForenserBackend.Domain.entities
 
         public string UserId { get; set; } = string.Empty;
 
-        public UserEntity User { get; set; } 
+        public UserEntity? User { get; set; } 
     }
 
 }
