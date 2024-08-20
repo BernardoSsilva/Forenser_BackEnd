@@ -5,7 +5,7 @@ namespace ForenserBackend.Domain.RepositoriesInterfaces
     public interface IOccurenceRepository
     {
         public Task CreateNewOccurence(OccurrenceEntity occurence);
-        public Task UpdateOccurence(OccurrenceEntity occurenceNewData);
+        public void UpdateOccurence(OccurrenceEntity occurenceNewData);
         public Task DeleteOccurence(string occurenceId);
 
         public Task<OccurrenceEntity> GetOccurenceDetailsById(string occurenceId);

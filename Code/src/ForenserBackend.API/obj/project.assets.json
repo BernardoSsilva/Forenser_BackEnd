@@ -2807,6 +2807,7 @@
       "ForenserBackend.Application >= 1.0.0",
       "ForenserBackend.Authentication >= 1.0.0",
       "ForenserBackend.Communication >= 1.0.0",
+      "ForenserBackend.Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.8",
       "Npgsql >= 8.0.3",
@@ -2855,6 +2856,9 @@
             },
             "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj": {
               "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj"
+            },
+            "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj"
             }
           }
         }

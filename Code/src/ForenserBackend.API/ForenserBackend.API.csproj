@@ -21,6 +21,7 @@
     <ProjectReference Include="..\ForenserBackend.Application\ForenserBackend.Application.csproj" />
     <ProjectReference Include="..\ForenserBackend.Authentication\ForenserBackend.Authentication.csproj" />
     <ProjectReference Include="..\ForenserBackend.Communication\ForenserBackend.Communication.csproj" />
+    <ProjectReference Include="..\ForenserBackend.Infrastructure\ForenserBackend.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ namespace ForenserBackend.Domain.RepositoriesInterfaces
     public interface IVehiclesRepository
     {
         public Task RegisterVehicle(VehicleEntity vehicle);
-        public Task UpdateVehicleData(VehicleEntity vehicle);
+        public void UpdateVehicleData(VehicleEntity vehicle);
         public Task UnregisterVehicle(string vehicleId);
 
         public Task<VehicleEntity> GetVehicleById(string vehicleId);

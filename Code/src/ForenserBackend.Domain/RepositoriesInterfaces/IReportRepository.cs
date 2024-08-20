@@ -7,7 +7,7 @@ namespace ForenserBackend.Domain.RepositoriesInterfaces
 
         public Task CreateNewReport(ReportEntity report);
         public Task DeleteReport(string reportId);
-        public Task UpdateReport(ReportEntity reportNewData);
+        public void UpdateReport(ReportEntity reportNewData);
 
         public Task<ReportEntity> GetReportById(string reportId);
         public Task<List<ReportEntity>> GetAllReports();

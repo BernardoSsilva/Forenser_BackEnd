@@ -7,7 +7,7 @@ namespace ForenserBackend.Domain.RepositoriesInterfaces
         public Task RegisterServiceSchedule(ServiceScheduleEntity service);
         public Task UnscheduleService(string scheduleId);
 
-        public Task UpdateSchedule(ServiceScheduleEntity serviceNewData);
+        public void UpdateSchedule(ServiceScheduleEntity serviceNewData);
 
         public Task<ServiceScheduleEntity> GetServiceScheduleById(string scheduleId);
 
