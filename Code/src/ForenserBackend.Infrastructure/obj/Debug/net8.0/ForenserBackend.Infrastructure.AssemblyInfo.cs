@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForenserBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0854ea21dd3372e66cb1d5456a444366fb1e88dc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb0a947c258a27188b01ba635b24127344b360a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForenserBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForenserBackend.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
