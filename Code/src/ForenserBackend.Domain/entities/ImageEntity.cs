@@ -11,6 +11,8 @@
         public required string UserId { get; set; }
 
         public required double ImageSize { get; set; }
+        public  UserEntity User { get; set; }
+        public  OccurrenceEntity Ocurrence { get; set; }
 
     }
 }

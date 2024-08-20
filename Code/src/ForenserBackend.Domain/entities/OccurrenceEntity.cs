@@ -28,5 +28,10 @@ namespace ForenserBackend.Domain.entities
        
         public List<string> WitnessList { get; set; } = [];
         public List<string> ReferencePoints { get; set; } = [];
+
+        public UserEntity User { get; set; }
+        public ICollection<ImageEntity> Images { get; } 
+        public ICollection<VehicleEntity> Vehicles { get;  } 
+
     }
 }

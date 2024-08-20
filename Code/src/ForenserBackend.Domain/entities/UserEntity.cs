@@ -11,5 +11,17 @@
         public required string UserEmail { get; set; }
         public required string Password { get; set; }
         public List<string> ContactPhonesNumbers { get; set; } = [];
+
+        public ICollection<ImageEntity> Images { get; }
+        public ICollection<OccurrenceEntity> Occurrences { get;} 
+
+        public ICollection<ReportEntity> Reports { get; } 
+
+        public ICollection<ServiceScheduleEntity> Schedules { get; } 
+
+        public ICollection<VehicleEntity> Vehicles { get;} 
+
+
+
     }
 }

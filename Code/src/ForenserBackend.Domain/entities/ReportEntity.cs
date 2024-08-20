@@ -20,6 +20,10 @@ namespace ForenserBackend.Domain.entities
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         public required string ContactPhone { get; set; }
+
+        public string UserId { get; set; } = string.Empty;
+
+        public UserEntity User { get; set; } 
     }
 
 }

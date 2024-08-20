@@ -16,5 +16,7 @@ namespace ForenserBackend.Domain.entities
         public required string PoliceUnity { get; set; } 
 
         public required string ContactPhone { get; set; }
+
+        public  UserEntity User { get; set; }
     }
 }
