@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForenserBackend.Authentication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+058c46b5dd95af19cdca1549a81cdc62aecd261b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf4d12af77af73c587863b0f59682271eb562e4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForenserBackend.Authentication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForenserBackend.Authentication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
