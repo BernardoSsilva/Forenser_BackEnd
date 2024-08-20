@@ -6,7 +6,7 @@ namespace ForenserBackend.Domain.RepositoriesInterfaces
     {
 
         public Task RegisterNewUser(UserEntity userData);
-        public Task UpdateUser(UserEntity newUserData);
+        public void UpdateUser(UserEntity newUserData);
         public Task DeleteUser(string userId);
 
         public Task<UserEntity> GetUserById(string userId);
