@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\tests\\forenserbackend.tests\\entitiestests\\occourrenceentitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|solutionrelative:tests\\forenserbackend.tests\\entitiestests\\occourrenceentitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\tests\\forenserbackend.tests\\repositoriestest\\userrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|solutionrelative:tests\\forenserbackend.tests\\repositoriestest\\userrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\tests\\forenserbackend.tests\\repositoriestest\\imagerepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|solutionrelative:tests\\forenserbackend.tests\\repositoriestest\\imagerepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.infrastructure\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|solutionrelative:src\\forenserbackend.infrastructure\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OccourrenceEntityTests.cs",
-              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
-              "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
-              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
-              "RelativeToolTip": "tests\\ForenserBackend.Tests\\EntitiesTests\\OccourrenceEntityTests.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwB0AAAAXAAAA",
+              "DocumentIndex": 1,
+              "Title": "ImageRepositoryTests.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\ImageRepositoryTests.cs",
+              "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\RepositoriesTest\\ImageRepositoryTests.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\ImageRepositoryTests.cs",
+              "RelativeToolTip": "tests\\ForenserBackend.Tests\\RepositoriesTest\\ImageRepositoryTests.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T19:00:02.41Z",
+              "WhenOpened": "2024-08-21T19:54:10.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersRepository.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\repositories\\UsersRepository.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\repositories\\UsersRepository.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\repositories\\UsersRepository.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\repositories\\UsersRepository.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAcwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T19:49:20.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserRepositoryTests.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "RelativeToolTip": "tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "ViewState": "AQIAALYAAAAAAAAAAAAcwNIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T19:06:31.186Z",
               "EditorCaption": ""
             }
           ]
