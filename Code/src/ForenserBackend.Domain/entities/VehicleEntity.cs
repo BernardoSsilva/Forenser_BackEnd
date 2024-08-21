@@ -6,7 +6,6 @@
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public required string OcurrenceId { get; set; }
     
-        public required string UserRegisterId { get; set; }
 
         public required string Model { get; set; }
 
@@ -15,6 +14,5 @@
         public required string VehicleMark { get; set; }
 
         public OccurrenceEntity Occurrence { get; set; } = null!;
-        public UserEntity User { get; set; } = null!;
     }
 }

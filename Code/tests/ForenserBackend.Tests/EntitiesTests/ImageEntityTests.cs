@@ -13,7 +13,6 @@ namespace ForenserBackend.Tests.EntitiesTests
                 Name = "Sample Image",
                 ImageUrl = "https://example.com/image.jpg",
                 OccurenceId = "occurence123",
-                UserId = "user123",
                 ImageSize = 2.5 
             }; ;
 
@@ -29,7 +28,6 @@ namespace ForenserBackend.Tests.EntitiesTests
                 Name = "Sample Image",
                 ImageUrl = "https://example.com/image.jpg",
                 OccurenceId = "occurence123",
-                UserId = "user123",
                 ImageSize = 2.5 
 
             };
@@ -37,7 +35,6 @@ namespace ForenserBackend.Tests.EntitiesTests
             Assert.Equal("Sample Image", image.Name);
             Assert.Equal("https://example.com/image.jpg", image.ImageUrl);
             Assert.Equal("occurence123", image.OccurenceId);
-            Assert.Equal("user123", image.UserId);
             Assert.Equal(2.5, image.ImageSize);
         }
 
@@ -50,7 +47,6 @@ namespace ForenserBackend.Tests.EntitiesTests
                 Name = "Sample Image",
                 ImageUrl = "https://example.com/image.jpg",
                 OccurenceId = "occurence123",
-                UserId = "user123",
                 ImageSize = 2.5,
                 Description = "This is a sample image description."
             };

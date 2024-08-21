@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ForenserBackend.Infrastructure.Migrations
 {
     [DbContext(typeof(ForenserDbContext))]
-    [Migration("20240821171548_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20240821182227_ReajustRelations")]
+    partial class ReajustRelations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,15 +50,9 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OccurenceId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Images");
                 });
@@ -282,10 +276,6 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("UserRegisterId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<string>("VehicleMark")
                         .IsRequired()
                         .HasColumnType("text");
@@ -298,8 +288,6 @@ namespace ForenserBackend.Infrastructure.Migrations
 
                     b.HasIndex("OcurrenceId");
 
-                    b.HasIndex("UserRegisterId");
-
                     b.ToTable("Vehicles");
                 });
 
@@ -311,15 +299,7 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
-                        .WithMany("Images")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Occurrence");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ForenserBackend.Domain.entities.OccurrenceEntity", b =>
@@ -374,15 +354,7 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
-                        .WithMany("Vehicles")
-                        .HasForeignKey("UserRegisterId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Occurrence");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ForenserBackend.Domain.entities.OccurrenceEntity", b =>
@@ -396,15 +368,11 @@ namespace ForenserBackend.Infrastructure.Migrations
 
             modelBuilder.Entity("ForenserBackend.Domain.entities.UserEntity", b =>
                 {
-                    b.Navigation("Images");
-
                     b.Navigation("Occurrences");
 
                     b.Navigation("Reports");
 
                     b.Navigation("Schedules");
-
-                    b.Navigation("Vehicles");
                 });
 #pragma warning restore 612, 618
         }

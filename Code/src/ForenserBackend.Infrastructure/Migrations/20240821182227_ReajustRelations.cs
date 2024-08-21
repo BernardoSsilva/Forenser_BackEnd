@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ForenserBackend.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class ReajustRelations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -120,7 +120,6 @@ namespace ForenserBackend.Infrastructure.Migrations
                     ImageUrl = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     OccurenceId = table.Column<string>(type: "text", nullable: false),
-                    UserId = table.Column<string>(type: "text", nullable: false),
                     ImageSize = table.Column<double>(type: "double precision", nullable: false)
                 },
                 constraints: table =>
@@ -130,12 +129,6 @@ namespace ForenserBackend.Infrastructure.Migrations
                         name: "FK_Images_Occurrences_OccurenceId",
                         column: x => x.OccurenceId,
                         principalTable: "Occurrences",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Images_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -167,7 +160,6 @@ namespace ForenserBackend.Infrastructure.Migrations
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
                     OcurrenceId = table.Column<string>(type: "text", nullable: false),
-                    UserRegisterId = table.Column<string>(type: "text", nullable: false),
                     Model = table.Column<string>(type: "text", nullable: false),
                     VehicleYear = table.Column<string>(type: "text", nullable: false),
                     VehicleMark = table.Column<string>(type: "text", nullable: false)
@@ -181,23 +173,12 @@ namespace ForenserBackend.Infrastructure.Migrations
                         principalTable: "Occurrences",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Vehicles_Users_UserRegisterId",
-                        column: x => x.UserRegisterId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Images_OccurenceId",
                 table: "Images",
                 column: "OccurenceId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Images_UserId",
-                table: "Images",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Occurrences_UserId",
@@ -223,11 +204,6 @@ namespace ForenserBackend.Infrastructure.Migrations
                 name: "IX_Vehicles_OcurrenceId",
                 table: "Vehicles",
                 column: "OcurrenceId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Vehicles_UserRegisterId",
-                table: "Vehicles",
-                column: "UserRegisterId");
         }
 
         /// <inheritdoc />

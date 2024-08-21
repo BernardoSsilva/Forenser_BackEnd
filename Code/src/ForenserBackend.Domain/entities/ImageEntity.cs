@@ -8,10 +8,8 @@
         public required string ImageUrl { get; set; }
         public string Description { get; set; } = string.Empty;
         public  required string OccurenceId { get; set; }
-        public required string UserId { get; set; }
 
         public required double ImageSize { get; set; }
-        public UserEntity User { get; set; } = null!;
         public OccurrenceEntity Occurrence { get; set; } = null!;
 
     }

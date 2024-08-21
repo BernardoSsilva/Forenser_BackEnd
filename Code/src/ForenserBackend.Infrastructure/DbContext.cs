@@ -30,18 +30,6 @@ namespace ForenserBackend.Infrastructure
                 .HasPrincipalKey(e => e.Id).IsRequired();
 
             modelBuilder.Entity<UserEntity>()
-                    .HasMany(e => e.Images)
-                    .WithOne(e => e.User)
-                    .HasForeignKey(e => e.UserId)
-                    .HasPrincipalKey(e => e.Id).IsRequired();
-
-            modelBuilder.Entity<UserEntity>()
-                    .HasMany(e => e.Vehicles)
-                    .WithOne(e => e.User)
-                    .HasForeignKey(e => e.UserRegisterId)
-                    .HasPrincipalKey(e => e.Id).IsRequired();
-
-            modelBuilder.Entity<UserEntity>()
                 .HasMany(e => e.Schedules)
                 .WithOne(e => e.User)
                 .HasForeignKey(e => e.UserId)
