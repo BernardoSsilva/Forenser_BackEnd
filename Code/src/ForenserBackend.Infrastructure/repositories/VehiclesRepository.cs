@@ -1,5 +1,6 @@
 ﻿using ForenserBackend.Domain.entities;
 using ForenserBackend.Domain.RepositoriesInterfaces;
+using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForenserBackend.Infrastructure.repositories
@@ -19,7 +20,19 @@ namespace ForenserBackend.Infrastructure.repositories
 
         public async Task<VehicleEntity> GetVehicleById(string vehicleId)
         {
-            return await _dbContext.Vehicles.AsNoTracking().FirstOrDefaultAsync(vehicle => vehicle.Id == vehicleId);
+            var vehicle = await _dbContext.Vehicles.AsNoTracking().FirstOrDefaultAsync(vehicle => vehicle.Id == vehicleId);
+
+            if (vehicle is null)
+            {
+                throw new NotFoundException("Vehicle not found");
+            }
+            return vehicle;
+        }
+
+        public async Task<List<VehicleEntity>> GetVehiclesByOccurence(string occurenceId)
+        {
+            var AllVehicles = await _dbContext.Vehicles.ToListAsync();
+            return AllVehicles.Where(vehicle => vehicle.OcurrenceId == occurenceId).ToList();
         }
 
         public async Task RegisterVehicle(VehicleEntity vehicle)
@@ -32,7 +45,7 @@ namespace ForenserBackend.Infrastructure.repositories
             var vehicleToDelete = await _dbContext.Vehicles.FirstOrDefaultAsync(vehicle => vehicle.Id == vehicleId);
 
             if (vehicleToDelete is null) {
-                return;
+                throw new NotFoundException("Vehicle not found"); 
             }
 
             _dbContext.Remove(vehicleToDelete);

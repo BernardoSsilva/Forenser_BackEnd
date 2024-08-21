@@ -1,3 +1,4 @@
+using ForenserBackend.API.Filters;
 using ForenserBackend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ builder.Services.AddEntityFrameworkNpgsql()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastrucuture();
+builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
 
 
 

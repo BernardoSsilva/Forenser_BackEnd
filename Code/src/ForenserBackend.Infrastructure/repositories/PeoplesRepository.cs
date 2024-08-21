@@ -1,5 +1,6 @@
 ﻿using ForenserBackend.Domain.entities;
 using ForenserBackend.Domain.RepositoriesInterfaces;
+using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForenserBackend.Infrastructure.repositories
@@ -18,7 +19,7 @@ namespace ForenserBackend.Infrastructure.repositories
             var peopleRegisterToDelete = await _context.Peoples.FirstOrDefaultAsync(people => people.Id == peopleId);
             if (peopleRegisterToDelete is null)
             {
-                return;
+                throw new NotFoundException("People not found");
             }
 
             _context.Remove(peopleRegisterToDelete);
@@ -32,12 +33,17 @@ namespace ForenserBackend.Infrastructure.repositories
         public async Task<List<PeopleEntity>> FindAllPeopleOnOcurrence(string occurenceId)
         {
             var peoplesList = await _context.Peoples.ToListAsync();
-            return (List<PeopleEntity>) peoplesList.Where(e => e.OccurrenceId == occurenceId);
+            return peoplesList.Where(e => e.OccurrenceId == occurenceId).ToList();
         }
 
         public async Task<PeopleEntity> FindPeopleById(string peopleId)
         {
-            return await _context.Peoples.AsNoTracking().FirstOrDefaultAsync(e => e.Id == peopleId);
+            var people = await _context.Peoples.AsNoTracking().FirstOrDefaultAsync(e => e.Id == peopleId);
+            if (people is null)
+            {
+                throw new NotFoundException("People not found");
+            }
+            return people;
         }
 
         public async Task RegisterNewPeople(PeopleEntity peopleData)

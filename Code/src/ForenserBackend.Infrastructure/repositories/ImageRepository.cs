@@ -1,6 +1,8 @@
 ﻿using ForenserBackend.Domain.entities;
 using ForenserBackend.Domain.RepositoriesInterfaces;
+using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ForenserBackend.Infrastructure.repositories
 {
@@ -20,7 +22,12 @@ namespace ForenserBackend.Infrastructure.repositories
 
         public async Task<ImageEntity> GetImageById(string imageId)
         {
-            return await _dbContext.Images.AsNoTracking().FirstOrDefaultAsync(image => image.Id == imageId);
+            var image = await _dbContext.Images.AsNoTracking().FirstOrDefaultAsync(image => image.Id == imageId);
+            if (image is null)
+            {
+                throw new NotFoundException("Image not found");
+            }
+            return image;
         }
 
         public async Task RegisterImage(ImageEntity image)
@@ -32,6 +39,10 @@ namespace ForenserBackend.Infrastructure.repositories
         public async Task UnregisterImage(string imageId)
         {
             var imageToRemove = await _dbContext.Images.FirstOrDefaultAsync(image => image.Id == imageId);
+            if (imageToRemove is null)
+            {
+                throw new NotFoundException("Image not found");
+            }
             _dbContext.Remove(imageToRemove);
 
         }

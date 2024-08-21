@@ -1016,11 +1016,22 @@
           "bin/placeholder/ForenserBackend.Domain.dll": {}
         }
       },
+      "ForenserBackend.Exception/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ForenserBackend.Exception.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ForenserBackend.Exception.dll": {}
+        }
+      },
       "ForenserBackend.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "ForenserBackend.Domain": "1.0.0",
+          "ForenserBackend.Exception": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4"
         },
@@ -2796,6 +2807,11 @@
       "path": "../ForenserBackend.Domain/ForenserBackend.Domain.csproj",
       "msbuildProject": "../ForenserBackend.Domain/ForenserBackend.Domain.csproj"
     },
+    "ForenserBackend.Exception/1.0.0": {
+      "type": "project",
+      "path": "../ForenserBackend.Exception/ForenserBackend.Exception.csproj",
+      "msbuildProject": "../ForenserBackend.Exception/ForenserBackend.Exception.csproj"
+    },
     "ForenserBackend.Infrastructure/1.0.0": {
       "type": "project",
       "path": "../ForenserBackend.Infrastructure/ForenserBackend.Infrastructure.csproj",
@@ -2807,6 +2823,7 @@
       "ForenserBackend.Application >= 1.0.0",
       "ForenserBackend.Authentication >= 1.0.0",
       "ForenserBackend.Communication >= 1.0.0",
+      "ForenserBackend.Exception >= 1.0.0",
       "ForenserBackend.Infrastructure >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.8",
@@ -2856,6 +2873,9 @@
             },
             "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj": {
               "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Communication\\ForenserBackend.Communication.csproj"
+            },
+            "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Exception\\ForenserBackend.Exception.csproj": {
+              "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Exception\\ForenserBackend.Exception.csproj"
             },
             "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj"

@@ -2030,11 +2030,22 @@
           "bin/placeholder/ForenserBackend.Domain.dll": {}
         }
       },
+      "ForenserBackend.Exception/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ForenserBackend.Exception.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ForenserBackend.Exception.dll": {}
+        }
+      },
       "ForenserBackend.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "ForenserBackend.Domain": "1.0.0",
+          "ForenserBackend.Exception": "1.0.0",
           "Microsoft.EntityFrameworkCore": "8.0.8",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4"
         },
@@ -6288,6 +6299,11 @@
       "type": "project",
       "path": "../../src/ForenserBackend.Domain/ForenserBackend.Domain.csproj",
       "msbuildProject": "../../src/ForenserBackend.Domain/ForenserBackend.Domain.csproj"
+    },
+    "ForenserBackend.Exception/1.0.0": {
+      "type": "project",
+      "path": "../../src/ForenserBackend.Exception/ForenserBackend.Exception.csproj",
+      "msbuildProject": "../../src/ForenserBackend.Exception/ForenserBackend.Exception.csproj"
     },
     "ForenserBackend.Infrastructure/1.0.0": {
       "type": "project",

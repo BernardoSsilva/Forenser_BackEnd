@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ForenserBackend.Domain\ForenserBackend.Domain.csproj" />
+    <ProjectReference Include="..\ForenserBackend.Exception\ForenserBackend.Exception.csproj" />
   </ItemGroup>
 
 </Project>

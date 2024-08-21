@@ -1,5 +1,6 @@
 ﻿using ForenserBackend.Domain.entities;
 using ForenserBackend.Domain.RepositoriesInterfaces;
+using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForenserBackend.Infrastructure.repositories
@@ -20,6 +21,10 @@ namespace ForenserBackend.Infrastructure.repositories
         public async Task DeleteOccurence(string occurenceId)
         {
             var occurrenceToDelete = await _context.Occurrences.FirstOrDefaultAsync(occurrence => occurrence.Id == occurenceId);
+            if (occurrenceToDelete is null)
+            {
+                throw new NotFoundException("Occurrence not found");
+            }
             _context.Remove(occurrenceToDelete);
         }
 
@@ -30,7 +35,12 @@ namespace ForenserBackend.Infrastructure.repositories
 
         public async Task<OccurrenceEntity> GetOccurenceDetailsById(string occurenceId)
         {
-            return await _context.Occurrences.AsNoTracking().FirstOrDefaultAsync(occurrence => occurrence.Id == occurenceId);
+            var occurrence = await _context.Occurrences.AsNoTracking().FirstOrDefaultAsync(occurrence => occurrence.Id == occurenceId);
+            if (occurrence is null)
+            {
+                throw new NotFoundException("Occurrence not found");
+            }
+            return occurrence;
         }
 
         public void UpdateOccurence(OccurrenceEntity occurenceNewData)

@@ -1,5 +1,6 @@
 ﻿using ForenserBackend.Domain.entities;
 using ForenserBackend.Domain.RepositoriesInterfaces;
+using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForenserBackend.Infrastructure.repositories
@@ -21,10 +22,11 @@ namespace ForenserBackend.Infrastructure.repositories
         public async Task DeleteReport(string reportId)
         {
             var reportToDelete = await _context.Reports.FirstOrDefaultAsync(report => report.Id == reportId);
-            if(reportToDelete is not null)
+            if(reportToDelete is  null)
             {
-                _context.Remove(reportToDelete);
+                throw new NotFoundException("Report not found");
             }
+            _context.Remove(reportToDelete);
         }
 
         public async Task<List<ReportEntity>> GetAllReports()
@@ -37,7 +39,7 @@ namespace ForenserBackend.Infrastructure.repositories
             var report = await _context.Reports.FirstOrDefaultAsync(report => report.Id == reportId);
             if (report is null)
             {
-                return null;
+                throw new NotFoundException("Report not found");
             }
             return report;
         }

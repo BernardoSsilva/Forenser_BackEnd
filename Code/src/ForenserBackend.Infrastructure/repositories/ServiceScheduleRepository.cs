@@ -1,5 +1,6 @@
 ﻿using ForenserBackend.Domain.entities;
 using ForenserBackend.Domain.RepositoriesInterfaces;
+using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForenserBackend.Infrastructure.repositories
@@ -20,7 +21,12 @@ namespace ForenserBackend.Infrastructure.repositories
 
         public async Task<ServiceScheduleEntity> GetServiceScheduleById(string scheduleId)
         {
-            return await _dbContext.ServiceSchedules.AsNoTracking().FirstOrDefaultAsync(service => service.Id == scheduleId);
+            var service = await _dbContext.ServiceSchedules.AsNoTracking().FirstOrDefaultAsync(service => service.Id == scheduleId);
+            if(service is null)
+            {
+                throw new NotFoundException("Service schedule not found");
+            }
+            return service;
         }
 
         public async Task RegisterServiceSchedule(ServiceScheduleEntity service)
@@ -32,10 +38,12 @@ namespace ForenserBackend.Infrastructure.repositories
         {
             var scheduleToDelete = await _dbContext.ServiceSchedules.FirstOrDefaultAsync(schedule => schedule.Id == scheduleId);
 
-            if (scheduleToDelete != null) {
-                _dbContext.Remove(scheduleToDelete);
+            if (scheduleToDelete is null)
+            {
+                throw new NotFoundException("Service schedule not found");
             }
-            return;
+            _dbContext.Remove(scheduleToDelete);
+         
         }
 
         public void UpdateSchedule(ServiceScheduleEntity serviceNewData)

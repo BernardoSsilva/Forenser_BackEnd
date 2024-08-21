@@ -9,6 +9,7 @@ namespace ForenserBackend.Domain.RepositoriesInterfaces
         public Task UnregisterVehicle(string vehicleId);
 
         public Task<VehicleEntity> GetVehicleById(string vehicleId);
+        public Task<List<VehicleEntity>> GetVehiclesByOccurence(string occurenceId);
         public Task<List<VehicleEntity>> GetAllVehicles();
     }
 }

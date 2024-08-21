@@ -1,5 +1,6 @@
 ﻿using ForenserBackend.Domain.entities;
 using ForenserBackend.Domain.RepositoriesInterfaces;
+using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForenserBackend.Infrastructure.repositories
@@ -16,6 +17,10 @@ namespace ForenserBackend.Infrastructure.repositories
         public async Task DeleteUser(string userId)
         {
             var userToDelete = await _context.Users.FirstOrDefaultAsync(user => user.Id == userId) ;
+            if (userToDelete is null)
+            {
+                throw new NotFoundException("User not found");
+            }
             _context.Remove(userToDelete);
         }
 
@@ -28,18 +33,30 @@ namespace ForenserBackend.Infrastructure.repositories
         public async Task<UserEntity> GetUserByCpf(string userCpf)
         {
             var user = await _context.Users.FirstOrDefaultAsync(user => user.CPF == userCpf);
+            if (user is null)
+            {
+                throw new NotFoundException("User not found");
+            }
             return user;
         }
 
         public async Task<UserEntity> GetUserByEmail(string userEmail)
         {
             var user = await _context.Users.FirstOrDefaultAsync(user => user.UserEmail == userEmail);
+            if (user is null)
+            {
+                throw new NotFoundException("User not found");
+            }
             return user;
         }
 
         public async Task<UserEntity> GetUserById(string userId)
         {
             var user = await _context.Users.FirstOrDefaultAsync(user => user.Id == userId);
+            if(user is null)
+            {
+                throw new NotFoundException("User not found");
+            }
             return user;
         }
 
@@ -48,7 +65,7 @@ namespace ForenserBackend.Infrastructure.repositories
             var userExists = await _context.Users.FirstOrDefaultAsync(u => u.CPF == userData.CPF || u.UserEmail == userData.UserEmail);
             if(userExists != null)
             {
-                throw new Exception("User Already Exists");
+                throw new ConflictException("User Already Exists");
             }
             await _context.AddAsync(userData);
         }
