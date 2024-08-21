@@ -45,6 +45,11 @@ namespace ForenserBackend.Infrastructure.repositories
 
         public async Task RegisterNewUser(UserEntity userData)
         {
+            var userExists = await _context.Users.FirstOrDefaultAsync(u => u.CPF == userData.CPF || u.UserEmail == userData.UserEmail);
+            if(userExists != null)
+            {
+                throw new Exception("User Already Exists");
+            }
             await _context.AddAsync(userData);
         }
 

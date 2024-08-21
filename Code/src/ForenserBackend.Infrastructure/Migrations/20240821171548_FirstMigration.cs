@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ForenserBackend.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class ReconfigureRelations8 : Migration
+    public partial class FirstMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -45,8 +45,6 @@ namespace ForenserBackend.Infrastructure.Migrations
                     LastUpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     Type = table.Column<int>(type: "integer", nullable: false),
                     ObjectList = table.Column<List<string>>(type: "text[]", nullable: false),
-                    Vitms = table.Column<List<string>>(type: "text[]", nullable: false),
-                    WitnessList = table.Column<List<string>>(type: "text[]", nullable: false),
                     ReferencePoints = table.Column<List<string>>(type: "text[]", nullable: false)
                 },
                 constraints: table =>
@@ -99,7 +97,8 @@ namespace ForenserBackend.Infrastructure.Migrations
                     Type = table.Column<int>(type: "integer", nullable: false),
                     PostalCode = table.Column<string>(type: "text", nullable: false),
                     PoliceUnity = table.Column<string>(type: "text", nullable: false),
-                    ContactPhone = table.Column<string>(type: "text", nullable: false)
+                    ContactPhone = table.Column<string>(type: "text", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -122,21 +121,42 @@ namespace ForenserBackend.Infrastructure.Migrations
                     Description = table.Column<string>(type: "text", nullable: false),
                     OccurenceId = table.Column<string>(type: "text", nullable: false),
                     UserId = table.Column<string>(type: "text", nullable: false),
-                    ImageSize = table.Column<double>(type: "double precision", nullable: false),
-                    OccurrenceId = table.Column<string>(type: "text", nullable: true)
+                    ImageSize = table.Column<double>(type: "double precision", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Images", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Images_Occurrences_OccurrenceId",
-                        column: x => x.OccurrenceId,
+                        name: "FK_Images_Occurrences_OccurenceId",
+                        column: x => x.OccurenceId,
                         principalTable: "Occurrences",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Images_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Peoples",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    PersonName = table.Column<string>(type: "text", nullable: false),
+                    PersonAge = table.Column<int>(type: "integer", nullable: false),
+                    Type = table.Column<int>(type: "integer", nullable: false),
+                    OccurrenceId = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Peoples", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Peoples_Occurrences_OccurrenceId",
+                        column: x => x.OccurrenceId,
+                        principalTable: "Occurrences",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -150,31 +170,29 @@ namespace ForenserBackend.Infrastructure.Migrations
                     UserRegisterId = table.Column<string>(type: "text", nullable: false),
                     Model = table.Column<string>(type: "text", nullable: false),
                     VehicleYear = table.Column<string>(type: "text", nullable: false),
-                    VehicleMark = table.Column<string>(type: "text", nullable: false),
-                    OccurrenceId = table.Column<string>(type: "text", nullable: false),
-                    UserId = table.Column<string>(type: "text", nullable: false)
+                    VehicleMark = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vehicles", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Vehicles_Occurrences_OccurrenceId",
-                        column: x => x.OccurrenceId,
+                        name: "FK_Vehicles_Occurrences_OcurrenceId",
+                        column: x => x.OcurrenceId,
                         principalTable: "Occurrences",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Vehicles_Users_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Vehicles_Users_UserRegisterId",
+                        column: x => x.UserRegisterId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_OccurrenceId",
+                name: "IX_Images_OccurenceId",
                 table: "Images",
-                column: "OccurrenceId");
+                column: "OccurenceId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Images_UserId",
@@ -187,6 +205,11 @@ namespace ForenserBackend.Infrastructure.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Peoples_OccurrenceId",
+                table: "Peoples",
+                column: "OccurrenceId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reports_UserId",
                 table: "Reports",
                 column: "UserId");
@@ -197,14 +220,14 @@ namespace ForenserBackend.Infrastructure.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vehicles_OccurrenceId",
+                name: "IX_Vehicles_OcurrenceId",
                 table: "Vehicles",
-                column: "OccurrenceId");
+                column: "OcurrenceId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vehicles_UserId",
+                name: "IX_Vehicles_UserRegisterId",
                 table: "Vehicles",
-                column: "UserId");
+                column: "UserRegisterId");
         }
 
         /// <inheritdoc />
@@ -212,6 +235,9 @@ namespace ForenserBackend.Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Images");
+
+            migrationBuilder.DropTable(
+                name: "Peoples");
 
             migrationBuilder.DropTable(
                 name: "Reports");

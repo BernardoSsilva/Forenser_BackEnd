@@ -18,6 +18,8 @@ namespace ForenserBackend.Infrastructure
         public DbSet<VehicleEntity> Vehicles { get; set; }
         public DbSet<OccurrenceEntity> Occurrences { get; set; }
         public DbSet<ServiceScheduleEntity> ServiceSchedules { get; set; }
+        public DbSet<PeopleEntity> Peoples { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -61,6 +63,12 @@ namespace ForenserBackend.Infrastructure
                 .HasMany(e => e.Vehicles)
                 .WithOne(e => e.Occurrence)
                 .HasForeignKey(e => e.OcurrenceId)
+                .HasPrincipalKey(e => e.Id).IsRequired();
+
+            modelBuilder.Entity<OccurrenceEntity>()
+                .HasMany(e => e.EnvolvedPeople)
+                .WithOne(e => e.Occurrence)
+                .HasForeignKey(e => e.OccurrenceId)
                 .HasPrincipalKey(e => e.Id).IsRequired();
         } 
     }

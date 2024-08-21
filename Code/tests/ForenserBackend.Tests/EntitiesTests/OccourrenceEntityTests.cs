@@ -26,8 +26,7 @@ namespace ForenserBackend.Tests.EntitiesTests
             Assert.NotNull(occurrence.Id);
             Assert.Equal(DateTime.UtcNow.Date, occurrence.CreatedAt.Date);
             Assert.Empty(occurrence.ObjectList);
-            Assert.Empty(occurrence.Vitms);
-            Assert.Empty(occurrence.WitnessList);
+            Assert.Empty(occurrence.EnvolvedPeople);
             Assert.Empty(occurrence.ReferencePoints);
             Assert.Equal(string.Empty, occurrence.OccurrenceDescription);
         }
@@ -94,13 +93,14 @@ namespace ForenserBackend.Tests.EntitiesTests
             }; ;
 
             // Act
-            occurrence.Vitms.Add("John Doe");
-            occurrence.Vitms.Add("Jane Smith");
+            occurrence.EnvolvedPeople.Add( new PeopleEntity{
+            PersonAge=20,
+            PersonName="test name",
+            Type=0});
 
             // Assert
-            Assert.Equal(2, occurrence.Vitms.Count);
-            Assert.Contains("John Doe", occurrence.Vitms);
-            Assert.Contains("Jane Smith", occurrence.Vitms);
+            Assert.Equal(1, occurrence.EnvolvedPeople.Count);
+   
         }
 
         [Fact]
@@ -118,13 +118,14 @@ namespace ForenserBackend.Tests.EntitiesTests
             }; ;
 
             // Act
-            occurrence.WitnessList.Add("Witness One");
-            occurrence.WitnessList.Add("Witness Two");
+            occurrence.EnvolvedPeople.Add(new PeopleEntity{
+                PersonAge = 20,
+            PersonName = "test name",
+            Type = 0});
 
             // Assert
-            Assert.Equal(2, occurrence.WitnessList.Count);
-            Assert.Contains("Witness One", occurrence.WitnessList);
-            Assert.Contains("Witness Two", occurrence.WitnessList);
+            Assert.Equal(1, occurrence.EnvolvedPeople.Count);
+           
         }
 
         [Fact]

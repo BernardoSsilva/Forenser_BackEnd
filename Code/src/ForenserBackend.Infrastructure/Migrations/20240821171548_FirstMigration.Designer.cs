@@ -13,8 +13,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ForenserBackend.Infrastructure.Migrations
 {
     [DbContext(typeof(ForenserDbContext))]
-    [Migration("20240820142956_ReconfigureRelations9")]
-    partial class ReconfigureRelations9
+    [Migration("20240821171548_FirstMigration")]
+    partial class FirstMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -106,19 +106,37 @@ namespace ForenserBackend.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<List<string>>("Vitms")
-                        .IsRequired()
-                        .HasColumnType("text[]");
-
-                    b.Property<List<string>>("WitnessList")
-                        .IsRequired()
-                        .HasColumnType("text[]");
-
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("Occurrences");
+                });
+
+            modelBuilder.Entity("ForenserBackend.Domain.entities.PeopleEntity", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("OccurrenceId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("PersonAge")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("PersonName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OccurrenceId");
+
+                    b.ToTable("Peoples");
                 });
 
             modelBuilder.Entity("ForenserBackend.Domain.entities.ReportEntity", b =>
@@ -186,6 +204,9 @@ namespace ForenserBackend.Infrastructure.Migrations
                     b.Property<string>("ContactPhone")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("PoliceUnity")
                         .IsRequired()
@@ -312,6 +333,17 @@ namespace ForenserBackend.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("ForenserBackend.Domain.entities.PeopleEntity", b =>
+                {
+                    b.HasOne("ForenserBackend.Domain.entities.OccurrenceEntity", "Occurrence")
+                        .WithMany("EnvolvedPeople")
+                        .HasForeignKey("OccurrenceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Occurrence");
+                });
+
             modelBuilder.Entity("ForenserBackend.Domain.entities.ReportEntity", b =>
                 {
                     b.HasOne("ForenserBackend.Domain.entities.UserEntity", "User")
@@ -355,6 +387,8 @@ namespace ForenserBackend.Infrastructure.Migrations
 
             modelBuilder.Entity("ForenserBackend.Domain.entities.OccurrenceEntity", b =>
                 {
+                    b.Navigation("EnvolvedPeople");
+
                     b.Navigation("Images");
 
                     b.Navigation("Vehicles");
