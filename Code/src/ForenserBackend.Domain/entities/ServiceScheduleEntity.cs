@@ -17,6 +17,7 @@ namespace ForenserBackend.Domain.entities
 
         public required string ContactPhone { get; set; }
 
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public  UserEntity User { get; set; }= null!;
     }
 }
