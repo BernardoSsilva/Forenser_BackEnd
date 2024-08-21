@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ForenserBackend.Infrastructure.repositories
 {
-    public class OccurenceRepository : IOccurenceRepository
+    public class OccurrenceRepository : IOccurenceRepository
     {
         private readonly ForenserDbContext _context;
 
-        public OccurenceRepository(ForenserDbContext context)
+        public OccurrenceRepository(ForenserDbContext context)
         {
             _context = context;
         }

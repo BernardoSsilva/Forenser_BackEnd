@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\tests\\forenserbackend.tests\\repositoriestest\\occurrencerepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|solutionrelative:tests\\forenserbackend.tests\\repositoriestest\\occurrencerepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.infrastructure\\repositories\\occurrencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|solutionrelative:src\\forenserbackend.infrastructure\\repositories\\occurrencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\tests\\forenserbackend.tests\\repositoriestest\\userrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|solutionrelative:tests\\forenserbackend.tests\\repositoriestest\\userrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\src\\forenserbackend.infrastructure\\repositories\\reportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43AB0FD2-2DA6-42CF-8C32-141202BDB853}|src\\ForenserBackend.Infrastructure\\ForenserBackend.Infrastructure.csproj|solutionrelative:src\\forenserbackend.infrastructure\\repositories\\reportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|c:\\users\\bernardo.silva\\desktop\\forenser\\backend\\forenser_backend\\code\\tests\\forenserbackend.tests\\repositoriestest\\vehiclesrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9B46A9AD-E11A-43CA-9CB4-B84DAF659099}|tests\\ForenserBackend.Tests\\ForenserBackend.Tests.csproj|solutionrelative:tests\\forenserbackend.tests\\repositoriestest\\vehiclesrepositorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +38,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OccurrenceRepositoryTests.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\OccurrenceRepositoryTests.cs",
+              "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\RepositoriesTest\\OccurrenceRepositoryTests.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\OccurrenceRepositoryTests.cs",
+              "RelativeToolTip": "tests\\ForenserBackend.Tests\\RepositoriesTest\\OccurrenceRepositoryTests.cs",
+              "ViewState": "AQIAAG8AAAAAAAAAAIAwwHwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T20:49:45.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReportRepository.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\repositories\\ReportRepository.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\repositories\\ReportRepository.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\repositories\\ReportRepository.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\repositories\\ReportRepository.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAIwDQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T20:49:11.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "OccurrenceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\repositories\\OccurrenceRepository.cs",
+              "RelativeDocumentMoniker": "src\\ForenserBackend.Infrastructure\\repositories\\OccurrenceRepository.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Infrastructure\\repositories\\OccurrenceRepository.cs",
+              "RelativeToolTip": "src\\ForenserBackend.Infrastructure\\repositories\\OccurrenceRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T20:47:59.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepositoryTests.cs",
+              "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "ToolTip": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "RelativeToolTip": "tests\\ForenserBackend.Tests\\RepositoriesTest\\UserRepositoryTests.cs",
+              "ViewState": "AQIAALsAAAAAAAAAAAAcwOAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T20:47:54.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ImageRepositoryTests.cs",
               "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\ImageRepositoryTests.cs",
               "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\RepositoriesTest\\ImageRepositoryTests.cs",
@@ -39,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "VehiclesRepositoryTests.cs",
               "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\tests\\ForenserBackend.Tests\\RepositoriesTest\\VehiclesRepositoryTests.cs",
               "RelativeDocumentMoniker": "tests\\ForenserBackend.Tests\\RepositoriesTest\\VehiclesRepositoryTests.cs",
@@ -52,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.API\\Program.cs",
               "RelativeDocumentMoniker": "src\\ForenserBackend.API\\Program.cs",
