@@ -2,7 +2,6 @@
 using ForenserBackend.Domain.RepositoriesInterfaces;
 using ForenserBackend.Exception.HttpErrors;
 using Microsoft.EntityFrameworkCore;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ForenserBackend.Infrastructure.repositories
 {

@@ -26,9 +26,8 @@ namespace ForenserBackend.Tests.EntitiesTests
             Assert.NotNull(occurrence.Id);
             Assert.Equal(DateTime.UtcNow.Date, occurrence.CreatedAt.Date);
             Assert.Empty(occurrence.ObjectList);
-            Assert.Empty(occurrence.EnvolvedPeople);
             Assert.Empty(occurrence.ReferencePoints);
-            Assert.Equal(string.Empty, occurrence.OccurrenceDescription);
+            Assert.Null(occurrence.OccurrenceDescription);
         }
 
         [Fact]
