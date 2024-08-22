@@ -1,4 +1,4 @@
-﻿namespace ForenserBackend.Application.UseCases.User.Interfaces
+﻿namespace ForenserBackend.Application.UseCases.User.Delete.interfaces
 {
     public interface IDeleteUserUseCase
     {
