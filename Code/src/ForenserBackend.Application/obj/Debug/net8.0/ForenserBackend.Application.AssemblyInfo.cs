@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForenserBackend.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e71b43add6f93bfa4ba8d8f9d23159c6c09df73a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1da96d5da15432ec836b5a623f315841458c4820")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForenserBackend.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForenserBackend.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
