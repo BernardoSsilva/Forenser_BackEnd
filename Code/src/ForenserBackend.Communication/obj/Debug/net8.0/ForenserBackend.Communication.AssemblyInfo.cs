@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ForenserBackend.Communication")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+293359363fd5be3a8617b7e35a97551090cdf900")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b824e260305b180a3d26aea9acde0fa5c1e81482")]
 [assembly: System.Reflection.AssemblyProductAttribute("ForenserBackend.Communication")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ForenserBackend.Communication")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
