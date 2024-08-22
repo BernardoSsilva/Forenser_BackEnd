@@ -10,4 +10,8 @@
     <ProjectReference Include="..\ForenserBackend.Domain\ForenserBackend.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Response\Multple\" />
+  </ItemGroup>
+
 </Project>

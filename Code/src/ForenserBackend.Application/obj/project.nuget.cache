@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "grMgVpHhwQQ=",
+  "dgSpecHash": "+7Y6sYPA6vs=",
   "success": true,
   "projectFilePath": "C:\\Users\\bernardo.silva\\Desktop\\Forenser\\Backend\\Forenser_BackEnd\\Code\\src\\ForenserBackend.Application\\ForenserBackend.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bernardo.silva\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\bernardo.silva\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.8\\microsoft.entityframeworkcore.8.0.8.nupkg.sha512",
     "C:\\Users\\bernardo.silva\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.8\\microsoft.entityframeworkcore.abstractions.8.0.8.nupkg.sha512",
     "C:\\Users\\bernardo.silva\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.8\\microsoft.entityframeworkcore.analyzers.8.0.8.nupkg.sha512",

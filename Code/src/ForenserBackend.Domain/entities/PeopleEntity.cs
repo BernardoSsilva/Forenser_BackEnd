@@ -11,7 +11,7 @@ namespace ForenserBackend.Domain.entities
 
         public required EnvolveType Type { get; set;}
 
-        public string OccurrenceId { get; set; }
+        public required string OccurrenceId { get; set; } 
 
         public OccurrenceEntity Occurrence { get; set; } = null!;
     }
