@@ -19,11 +19,7 @@ builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)))
 builder.Services.AddApplication();
 
 
-
-
-
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
