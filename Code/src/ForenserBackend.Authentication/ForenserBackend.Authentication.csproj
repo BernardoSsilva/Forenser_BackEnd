@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="JWT" Version="10.1.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ForenserBackend.Communication\ForenserBackend.Communication.csproj" />
     <ProjectReference Include="..\ForenserBackend.Domain\ForenserBackend.Domain.csproj" />
     <ProjectReference Include="..\ForenserBackend.Infrastructure\ForenserBackend.Infrastructure.csproj" />
